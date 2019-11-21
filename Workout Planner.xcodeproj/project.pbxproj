@@ -7,23 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E1B6B5D23856E2F00CA6F57 /* WorkoutsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B6B5C23856E2F00CA6F57 /* WorkoutsVC.swift */; };
+		4E1B6B5F2385704800CA6F57 /* ProgressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B6B5E2385704800CA6F57 /* ProgressVC.swift */; };
+		4E1B6B61238570B700CA6F57 /* StopwatchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B6B60238570B700CA6F57 /* StopwatchVC.swift */; };
 		4ED48B1B2384302600DB7BC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED48B1A2384302600DB7BC3 /* AppDelegate.swift */; };
 		4ED48B1D2384302600DB7BC3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED48B1C2384302600DB7BC3 /* SceneDelegate.swift */; };
-		4ED48B1F2384302600DB7BC3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED48B1E2384302600DB7BC3 /* ViewController.swift */; };
-		4ED48B222384302600DB7BC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ED48B202384302600DB7BC3 /* Main.storyboard */; };
+		4ED48B1F2384302600DB7BC3 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED48B1E2384302600DB7BC3 /* MainTabBarController.swift */; };
 		4ED48B242384303100DB7BC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ED48B232384303100DB7BC3 /* Assets.xcassets */; };
 		4ED48B272384303100DB7BC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ED48B252384303100DB7BC3 /* LaunchScreen.storyboard */; };
+		4ED48B3423844CB000DB7BC3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ED48B3323844CB000DB7BC3 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E1B6B5C23856E2F00CA6F57 /* WorkoutsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsVC.swift; sourceTree = "<group>"; };
+		4E1B6B5E2385704800CA6F57 /* ProgressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressVC.swift; sourceTree = "<group>"; };
+		4E1B6B60238570B700CA6F57 /* StopwatchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchVC.swift; sourceTree = "<group>"; };
 		4ED48B172384302600DB7BC3 /* Workout Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Workout Planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ED48B1A2384302600DB7BC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4ED48B1C2384302600DB7BC3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4ED48B1E2384302600DB7BC3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4ED48B212384302600DB7BC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4ED48B1E2384302600DB7BC3 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		4ED48B232384303100DB7BC3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4ED48B262384303100DB7BC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4ED48B282384303100DB7BC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4ED48B3323844CB000DB7BC3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +46,7 @@
 		4ED48B0E2384302500DB7BC3 = {
 			isa = PBXGroup;
 			children = (
+				4ED48B3323844CB000DB7BC3 /* Default-568h@2x.png */,
 				4ED48B192384302600DB7BC3 /* Workout Planner */,
 				4ED48B182384302600DB7BC3 /* Products */,
 			);
@@ -56,15 +63,57 @@
 		4ED48B192384302600DB7BC3 /* Workout Planner */ = {
 			isa = PBXGroup;
 			children = (
-				4ED48B1A2384302600DB7BC3 /* AppDelegate.swift */,
-				4ED48B1C2384302600DB7BC3 /* SceneDelegate.swift */,
-				4ED48B1E2384302600DB7BC3 /* ViewController.swift */,
-				4ED48B202384302600DB7BC3 /* Main.storyboard */,
-				4ED48B232384303100DB7BC3 /* Assets.xcassets */,
-				4ED48B252384303100DB7BC3 /* LaunchScreen.storyboard */,
-				4ED48B282384303100DB7BC3 /* Info.plist */,
+				4ED48B2E23844C2E00DB7BC3 /* ViewControllers */,
+				4ED48B3123844C6B00DB7BC3 /* Models */,
+				4ED48B3023844C6200DB7BC3 /* Helpers */,
+				4ED48B2F23844C4800DB7BC3 /* IBuilder */,
+				4ED48B3223844C7C00DB7BC3 /* Supports */,
 			);
 			path = "Workout Planner";
+			sourceTree = "<group>";
+		};
+		4ED48B2E23844C2E00DB7BC3 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4ED48B1E2384302600DB7BC3 /* MainTabBarController.swift */,
+				4E1B6B5C23856E2F00CA6F57 /* WorkoutsVC.swift */,
+				4E1B6B5E2385704800CA6F57 /* ProgressVC.swift */,
+				4E1B6B60238570B700CA6F57 /* StopwatchVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4ED48B2F23844C4800DB7BC3 /* IBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				4ED48B252384303100DB7BC3 /* LaunchScreen.storyboard */,
+			);
+			path = IBuilder;
+			sourceTree = "<group>";
+		};
+		4ED48B3023844C6200DB7BC3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		4ED48B3123844C6B00DB7BC3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4ED48B3223844C7C00DB7BC3 /* Supports */ = {
+			isa = PBXGroup;
+			children = (
+				4ED48B1A2384302600DB7BC3 /* AppDelegate.swift */,
+				4ED48B1C2384302600DB7BC3 /* SceneDelegate.swift */,
+				4ED48B232384303100DB7BC3 /* Assets.xcassets */,
+				4ED48B282384303100DB7BC3 /* Info.plist */,
+			);
+			path = Supports;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,8 +175,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4ED48B272384303100DB7BC3 /* LaunchScreen.storyboard in Resources */,
+				4ED48B3423844CB000DB7BC3 /* Default-568h@2x.png in Resources */,
 				4ED48B242384303100DB7BC3 /* Assets.xcassets in Resources */,
-				4ED48B222384302600DB7BC3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +187,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4ED48B1F2384302600DB7BC3 /* ViewController.swift in Sources */,
+				4E1B6B5F2385704800CA6F57 /* ProgressVC.swift in Sources */,
+				4ED48B1F2384302600DB7BC3 /* MainTabBarController.swift in Sources */,
+				4E1B6B61238570B700CA6F57 /* StopwatchVC.swift in Sources */,
 				4ED48B1B2384302600DB7BC3 /* AppDelegate.swift in Sources */,
+				4E1B6B5D23856E2F00CA6F57 /* WorkoutsVC.swift in Sources */,
 				4ED48B1D2384302600DB7BC3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,14 +199,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4ED48B202384302600DB7BC3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4ED48B212384302600DB7BC3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4ED48B252384303100DB7BC3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -286,7 +330,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X6HNJK263V;
-				INFOPLIST_FILE = "Workout Planner/Info.plist";
+				INFOPLIST_FILE = "Workout Planner/Supports/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +348,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X6HNJK263V;
-				INFOPLIST_FILE = "Workout Planner/Info.plist";
+				INFOPLIST_FILE = "Workout Planner/Supports/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
