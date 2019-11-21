@@ -20,8 +20,9 @@ class MainTabBarController: UITabBarController {
 //Mark: nav controller
 extension MainTabBarController {
     func setupTabBar() {
+        UITabBar.appearance().tintColor = .orange
         let workoutsController = createNavController(vc: WorkoutsVC(), image: #imageLiteral(resourceName: "workouts"), title: "Workouts")
-        let progressController = createNavController(vc: ProgressVC(), image: #imageLiteral(resourceName: "progress"),  title: "Your progress")
+        let progressController = createNavController(vc: ProgressVC(), image: #imageLiteral(resourceName: "progress"),  title: "My progress")
         let stopwatchController = createNavController(vc: StopwatchVC(), image: #imageLiteral(resourceName: "stopwatch"),  title: "Stopwatch")
         viewControllers = [workoutsController, progressController, stopwatchController]
     }

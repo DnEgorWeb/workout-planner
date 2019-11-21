@@ -13,5 +13,4 @@ class ProgressVC: UIViewController {
         super.viewDidLoad()
 
     }
-
 }

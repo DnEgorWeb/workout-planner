@@ -9,7 +9,6 @@
 import UIKit
 
 class WorkoutsVC: UIViewController {
-    let sections = UISegmentedControl()
     let tableView = UITableView()
     var safeArea: UILayoutGuide!
 
@@ -25,22 +24,21 @@ class WorkoutsVC: UIViewController {
 
 // header bar
 extension WorkoutsVC {
+    func setupSections() {
+        let titles = ["My workouts", "Sets"]
+        let segmentedControl = UISegmentedControl(items: titles)
+        segmentedControl.selectedSegmentIndex = 0
+        navigationItem.titleView = segmentedControl
+    }
+    
     func setupNewWorkoutButton() {
         let newWorkoutButton = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: #selector(newWorkoutTapped))
+        newWorkoutButton.tintColor = .orange
         navigationItem.rightBarButtonItem = newWorkoutButton
     }
     
     @objc func newWorkoutTapped() {
         
-    }
-}
-
-// sections
-extension WorkoutsVC {
-    func setupSections() {
-        let sections = UISegmentedControl()
-        view.addSubview(sections)
-//        sections.addTarget(self, action: "action:", for: .valueChanged)
     }
 }
 
