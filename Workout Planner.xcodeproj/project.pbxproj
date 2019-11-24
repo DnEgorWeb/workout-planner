@@ -14,6 +14,7 @@
 		4E53BBCE238A64AA0086302C /* StopwatchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E53BBCD238A64AA0086302C /* StopwatchCoordinator.swift */; };
 		4E53BBD1238A72530086302C /* ObjectDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E53BBD0238A72530086302C /* ObjectDataSource.swift */; };
 		4E53BBD3238A77530086302C /* ObjectTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E53BBD2238A77530086302C /* ObjectTableViewDelegate.swift */; };
+		4E53BBD6238A79680086302C /* Workouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E53BBD5238A79680086302C /* Workouts.swift */; };
 		4E59C388238A3B6200209DB4 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E59C387238A3B6200209DB4 /* Coordinator.swift */; };
 		4E59C38D238A5B4400209DB4 /* WorkoutCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E59C38C238A5B4400209DB4 /* WorkoutCoordinator.swift */; };
 		4E6B1DE32387F577006B9CCA /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6B1DE22387F577006B9CCA /* Group.swift */; };
@@ -36,6 +37,7 @@
 		4E53BBCD238A64AA0086302C /* StopwatchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchCoordinator.swift; sourceTree = "<group>"; };
 		4E53BBD0238A72530086302C /* ObjectDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDataSource.swift; sourceTree = "<group>"; };
 		4E53BBD2238A77530086302C /* ObjectTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectTableViewDelegate.swift; sourceTree = "<group>"; };
+		4E53BBD5238A79680086302C /* Workouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workouts.swift; sourceTree = "<group>"; };
 		4E59C387238A3B6200209DB4 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		4E59C38C238A5B4400209DB4 /* WorkoutCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCoordinator.swift; sourceTree = "<group>"; };
 		4E6B1DE22387F577006B9CCA /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
@@ -63,6 +65,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E53BBD4238A793F0086302C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4E53BBD5238A79680086302C /* Workouts.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		4E59C38B238A551300209DB4 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,11 +116,12 @@
 			isa = PBXGroup;
 			children = (
 				4ED48B2E23844C2E00DB7BC3 /* ViewControllers */,
+				4E53BBD4238A793F0086302C /* Views */,
 				4ED48B3123844C6B00DB7BC3 /* Models */,
 				4E59C38B238A551300209DB4 /* Coordinators */,
 				4ED48B3023844C6200DB7BC3 /* Helpers */,
-				4ED48B2F23844C4800DB7BC3 /* IBuilder */,
 				4ED48B3223844C7C00DB7BC3 /* Supports */,
+				4ED48B2F23844C4800DB7BC3 /* IBuilder */,
 			);
 			path = "Workout Planner";
 			sourceTree = "<group>";
@@ -244,6 +255,7 @@
 				4E59C388238A3B6200209DB4 /* Coordinator.swift in Sources */,
 				4E1B6B5D23856E2F00CA6F57 /* WorkoutsVC.swift in Sources */,
 				4E7A83932386CCD200CE9A7F /* CreateGroupVC.swift in Sources */,
+				4E53BBD6238A79680086302C /* Workouts.swift in Sources */,
 				4ED48B1D2384302600DB7BC3 /* SceneDelegate.swift in Sources */,
 				4E53BBCE238A64AA0086302C /* StopwatchCoordinator.swift in Sources */,
 				4E53BBD3238A77530086302C /* ObjectTableViewDelegate.swift in Sources */,

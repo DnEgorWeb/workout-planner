@@ -23,6 +23,7 @@ class WorkoutCoordinator: Coordinator {
         let vc = WorkoutsVC()
         vc.coordinator = self
         vc.tabBarItem = UITabBarItem(title: "Workouts", image: UIImage(named: "workouts"), tag: 0)
+        navigationController.navigationBar.tintColor = .orange
         navigationController.pushViewController(vc, animated: true)
     }
     
