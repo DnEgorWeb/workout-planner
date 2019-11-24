@@ -9,6 +9,7 @@
 import UIKit
 
 class StopwatchVC: UIViewController {
+    weak var coordinator: StopwatchCoordinator?
 
     override func viewDidLoad() {
         super.viewDidLoad()

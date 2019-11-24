@@ -9,6 +9,8 @@
 import UIKit
 
 class ProgressVC: UIViewController {
+    weak var coordinator: ProgressCoordinator?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -9,18 +9,22 @@
 import UIKit
 
 class MainTabBarController: UITabBarController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    let workout = WorkoutCoordinator(navigationController: UINavigationController())
+    let progress = ProgressCoordinator(navigationController: UINavigationController())
+    let stopwatch = StopwatchCoordinator(navigationController: UINavigationController())
+    
+    override func loadView() {
+        super.loadView()
         
-        setupTabBar();
+        UITabBar.appearance().tintColor = .orange
+        viewControllers = [workout.navigationController, progress.navigationController, stopwatch.navigationController]
+//        setupTabBar()
     }
 }
 
-//Mark: nav controller
+// Mark: nav controller
 extension MainTabBarController {
     func setupTabBar() {
-        UITabBar.appearance().tintColor = .orange
         let workoutsController = createNavController(vc: WorkoutsVC(), image: #imageLiteral(resourceName: "workouts"), title: "Workouts")
         let progressController = createNavController(vc: ProgressVC(), image: #imageLiteral(resourceName: "progress"),  title: "My progress")
         let stopwatchController = createNavController(vc: StopwatchVC(), image: #imageLiteral(resourceName: "stopwatch"),  title: "Stopwatch")
