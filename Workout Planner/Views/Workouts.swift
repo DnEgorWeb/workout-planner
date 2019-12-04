@@ -12,7 +12,6 @@ class Workouts: UIView {
     let tableView = UITableView()
     let workoutModes = UISegmentedControl(items: ["My workouts", "Exercises", "Programs"])
     private var safeArea: UILayoutGuide!
-    private let groupCell = "groupCell"
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,7 +34,6 @@ class Workouts: UIView {
     
     func setupTableView() {
         safeArea = self.layoutMarginsGuide
-        tableView.register(GroupCell.self, forCellReuseIdentifier: groupCell)
         tableView.tableFooterView = UIView()
         addSubview(tableView)
         

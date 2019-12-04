@@ -29,10 +29,18 @@ class WorkoutCoordinator: Coordinator {
     
     func createNewGroup() {
         let vc = CreateGroupVC()
+        let navController = UINavigationController(rootViewController: vc)
+        navController.navigationBar.tintColor = .orange
         vc.coordinator = self
         vc.title = "New Group"
+        vc.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveNewGroup))
+        vc.navigationItem.rightBarButtonItem?.isEnabled = false
         vc.navigationItem.backBarButtonItem?.tintColor = .orange
         
-        navigationController.pushViewController(vc, animated: true)
+        navigationController.present(navController, animated: true)
+    }
+    
+    @objc func saveNewGroup() {
+        navigationController.topViewController?.dismiss(animated: true)
     }
 }

@@ -10,13 +10,15 @@ import UIKit
 
 class WorkoutsVC: UIViewController {
     weak var coordinator: WorkoutCoordinator?
-    var workoutsView = Workouts()
-    var dataSource = ObjectDataSource()
-    var tableDelegate = ObjectTableViewDelegate()
+    private var workoutsView = Workouts()
+    private var dataSource = WorkoutsDS()
+    private var tableDelegate = WorkoutsTableViewDelegate()
+    private let cellIdentifier = CellIdentifiers.workouts.rawValue
 
     override func loadView() {
         super.loadView()
         
+        workoutsView.tableView.register(GroupCell.self, forCellReuseIdentifier: cellIdentifier)
         workoutsView.tableView.dataSource = dataSource
         workoutsView.tableView.delegate = tableDelegate
         

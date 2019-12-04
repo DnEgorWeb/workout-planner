@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ObjectTableViewDelegate: NSObject, UITableViewDelegate {
+class WorkoutsTableViewDelegate: NSObject, UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: tableView.frame.height))
         header.backgroundColor = #colorLiteral(red: 0.3272230029, green: 0.7569765449, blue: 0.9854061007, alpha: 1)

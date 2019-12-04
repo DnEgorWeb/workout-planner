@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ObjectDataSource: NSObject, UITableViewDataSource {
+class WorkoutsDS: NSObject, UITableViewDataSource {
     private var defaultData: [GroupTypes: [Group]] = [
         .srength: [
             Group(title: "Monday", subtitle: "Hands and chest", imageName: nil),
@@ -21,7 +21,7 @@ class ObjectDataSource: NSObject, UITableViewDataSource {
             Group(title: "Group title", subtitle: "Group subtitle", imageName: nil),
         ]
     ]
-    private let groupCell = "groupCell"
+    private let groupCell = CellIdentifiers.workouts.rawValue
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return defaultData.count
