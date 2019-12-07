@@ -8,13 +8,7 @@
 
 import UIKit
 
-class ImageCell: UITableViewCell {
-    var imageName: String? {
-        didSet {
-            groupImageView.image = UIImage(named: imageName!)
-        }
-    }
-    
+class ImageCell: UITableViewCell {    
     let groupImageView: UIImageView = {
         let imgView = UIImageView()
         imgView.image = UIImage(named: "photoPlaceholder")

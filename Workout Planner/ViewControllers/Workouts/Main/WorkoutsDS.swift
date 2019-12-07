@@ -11,14 +11,14 @@ import UIKit
 class WorkoutsDS: NSObject, UITableViewDataSource {
     var workoutsData: [GroupTypes: [Group]] = [
         .strength: [
-            Group(title: "Monday", subtitle: "Hands and chest", image: nil),
-            Group(title: "Friday", subtitle: "Legs and ABS", image: nil),
+            Group(title: "Monday", subtitle: "Hands and chest", image: nil, type: .strength),
+            Group(title: "Friday", subtitle: "Legs and ABS", image: nil, type: .strength),
         ],
         .cardio: [
-            Group(title: "Tabata", subtitle: "Legs", image: nil),
+            Group(title: "Tabata", subtitle: "Legs", image: nil, type: .cardio),
         ],
         .custom: [
-            Group(title: "Group title", subtitle: "Group subtitle", image: nil),
+            Group(title: "Group title", subtitle: "Group subtitle", image: nil, type: .custom),
         ]
     ]
     var collapseSectionsState: [GroupTypes: Bool] = [.strength: false, .cardio: false, .custom: false]

@@ -10,7 +10,12 @@ import UIKit
 
 class TypeCell: UITableViewCell {
     private var safeArea: UILayoutGuide!
-    var type: GroupTypes = .strength
+    var type: GroupTypes = .strength {
+        didSet {
+            let row = getRowNumber(type: type)
+            picker.selectRow(row, inComponent: 0, animated: true)
+        }
+    }
     
     var titleName: String? {
         didSet {
@@ -95,6 +100,17 @@ extension TypeCell: UIPickerViewDelegate, UIPickerViewDataSource {
         let type = getGroupType(row: row)
         
         return NSAttributedString(string: type.rawValue, attributes: [NSAttributedString.Key.foregroundColor: UIColor.orange])
+    }
+    
+    func getRowNumber(type: GroupTypes) -> Int {
+        switch type {
+        case .strength:
+            return 0
+        case .cardio:
+            return 1
+        default:
+            return 2
+        }
     }
     
     func getGroupType(row: Int) -> GroupTypes {

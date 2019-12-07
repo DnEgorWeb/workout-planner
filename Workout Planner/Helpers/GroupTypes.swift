@@ -13,3 +13,8 @@ enum GroupTypes: String, CaseIterable {
     case cardio = "Cardio"
     case custom = "Custom"
 }
+
+enum ModeTypes {
+    case create
+    case edit
+}

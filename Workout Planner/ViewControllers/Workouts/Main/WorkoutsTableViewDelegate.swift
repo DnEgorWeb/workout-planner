@@ -9,7 +9,7 @@
 import UIKit
 
 class WorkoutsTableViewDelegate: NSObject, UITableViewDelegate {
-    weak var delegate: CollapseHandler?
+    weak var delegate: ActionsHandler?
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let view = tableView.dequeueReusableHeaderFooterView(
@@ -35,6 +35,18 @@ class WorkoutsTableViewDelegate: NSObject, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 30
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let editAction = UIContextualAction(style: .normal, title: "Edit") { (_, _, completionHandler) in
+            self.delegate?.editCell(indexPath: indexPath, completionHandler: completionHandler)
+        }
+        
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (_, _, completionHandler) in
+            self.delegate?.deleteCell(indexPath: indexPath, completionHandler: completionHandler)
+        }
+        
+        return UISwipeActionsConfiguration(actions: [deleteAction, editAction])
     }
     
     @objc func handleTap(_ sender: UITapGestureRecognizer) {

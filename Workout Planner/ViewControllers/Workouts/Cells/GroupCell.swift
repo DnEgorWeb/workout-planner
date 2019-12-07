@@ -16,8 +16,11 @@ class GroupCell: UITableViewCell {
             subTitle.text = currentWorkout?.subtitle
             let image = currentWorkout?.image ?? UIImage(named: "emptyGroup")
             groupImage.image = image
+            type = currentWorkout?.type
         }
     }
+    
+    var type: GroupTypes?
     
     let title: UILabel = {
         let titleLabel = UILabel()

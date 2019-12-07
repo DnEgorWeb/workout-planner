@@ -11,6 +11,13 @@ import UIKit
 class CreateGroupVC: UIViewController {
     // MARK: - Properties
     weak var coordinator: WorkoutCoordinator?
+    var mode: ModeTypes
+    var groupData: Group? {
+        didSet {
+            dataSource.groupData = groupData
+        }
+    }
+    var indexPath: IndexPath?
     private var tableView: UITableView?
     private var dataSource = CreateGroupDS()
     private var tableDelegate = CreateGroupTableDelegate()
@@ -19,6 +26,16 @@ class CreateGroupVC: UIViewController {
     private let titleCellIdentifier = CellIdentifiers.createGroupTitle.rawValue
     private let subtitleCellIdentifier = CellIdentifiers.createGroupSubtitle.rawValue
     private let typeCellIdentifier = CellIdentifiers.createGroupType.rawValue
+    
+    init(mode: ModeTypes) {
+        self.mode = mode
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func loadView() {
         super.loadView()
@@ -30,6 +47,7 @@ class CreateGroupVC: UIViewController {
         tableView?.register(TextCell.self, forCellReuseIdentifier: titleCellIdentifier)
         tableView?.register(TypeCell.self, forCellReuseIdentifier: typeCellIdentifier)
         
+        dataSource.mode = mode
         tableView?.dataSource = dataSource
         tableView?.delegate = tableDelegate
         createGroup.imagePicker.delegate = self

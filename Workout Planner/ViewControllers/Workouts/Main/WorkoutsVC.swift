@@ -22,6 +22,7 @@ class WorkoutsVC: UIViewController {
         workoutsView.tableView.dataSource = dataSource
         workoutsView.tableView.delegate = tableDelegate
         workoutsView.tableView.register(SectionHeaderView.self, forHeaderFooterViewReuseIdentifier: SectionHeaderView.reuseIdentifier)
+        workoutsView.tableView.allowsSelectionDuringEditing = true
         
         tableDelegate.delegate = self
         
@@ -43,7 +44,23 @@ class WorkoutsVC: UIViewController {
         navigationItem.rightBarButtonItem = newWorkoutButton
     }
     
-    func updateData(newGroup: Group) {
+    func modifyGroup(group: Group, indexPath: IndexPath) {
+        guard let cell = workoutsView.tableView.cellForRow(at: indexPath) as? GroupCell else { return }
+        if cell.type != group.type {
+            // fix this block
+            dataSource.workoutsData[cell.type!]?.remove(at: indexPath.row)
+            createGroup(newGroup: group)
+            return
+            // end of fix
+        } else {
+            dataSource.workoutsData[group.type!]?[indexPath.row] = group
+        }
+
+        let view = self.view as? Workouts
+        view?.tableView.reloadData()
+    }
+    
+    func createGroup(newGroup: Group) {
         dataSource.workoutsData[newGroup.type!]?.append(newGroup)
         let view = self.view as? Workouts
         view?.tableView.reloadData()
@@ -53,7 +70,7 @@ class WorkoutsVC: UIViewController {
 // MARK: - Selectors
 extension WorkoutsVC {
     @objc func newGroupTapped() {
-        coordinator?.createNewGroup()
+        coordinator?.createNewGroup(mode: .create, groupData: nil, indexPath: nil)
     }
     
     @objc func segmentedControlTapped(sender: UISegmentedControl) {
@@ -61,7 +78,7 @@ extension WorkoutsVC {
     }
 }
 
-extension WorkoutsVC: CollapseHandler {
+extension WorkoutsVC: ActionsHandler {
     func collapse(section: Int) {
         let sectionType = GroupTypes.allCases[section]
         dataSource.collapseSectionsState[sectionType]?.toggle()
@@ -70,5 +87,34 @@ extension WorkoutsVC: CollapseHandler {
         view?.tableView.beginUpdates()
         view?.tableView.reloadSections([section], with: .fade)
         view?.tableView.endUpdates()
+    }
+    
+    func editCell(indexPath: IndexPath, completionHandler: @escaping (Bool) -> Void) {
+        let sectionType = GroupTypes.allCases[indexPath.section]
+        let groupData = self.dataSource.workoutsData[sectionType]?[indexPath.row]
+        self.coordinator?.createNewGroup(mode: .edit, groupData: groupData, indexPath: indexPath)
+        completionHandler(true)
+    }
+    
+    func deleteCell(indexPath: IndexPath, completionHandler: @escaping (Bool) -> Void) {
+        let message = "Please, confirm you want to delete this group"
+        let ac = UIAlertController(title: "Delete group", message: message, preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "Ok", style: .default) { (_) in
+            let sectionType = GroupTypes.allCases[indexPath.section]
+            self.dataSource.workoutsData[sectionType]?.remove(at: indexPath.row)
+            
+            guard let view = self.view as? Workouts else { return }
+            view.tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in
+            completionHandler(true)
+        }
+        
+        ac.addAction(okAction)
+        ac.addAction(cancelAction)
+        
+        self.present(ac, animated: true)
     }
 }

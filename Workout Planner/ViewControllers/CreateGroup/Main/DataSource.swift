@@ -10,6 +10,8 @@ import UIKit
 
 class CreateGroupDS: NSObject, UITableViewDataSource {
     weak var delegate: EditingHandler?
+    var mode: ModeTypes?
+    var groupData: Group?
     private let imageCellIdentifier = CellIdentifiers.createGroupImage.rawValue
     private let titleCellIdentifier = CellIdentifiers.createGroupTitle.rawValue
     private let subtitleCellIdentifier = CellIdentifiers.createGroupSubtitle.rawValue
@@ -27,21 +29,43 @@ class CreateGroupDS: NSObject, UITableViewDataSource {
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: imageCellIdentifier, for: indexPath) as! ImageCell
+            
+            if (mode == .edit) {
+                if let image = groupData?.image {
+                    cell.groupImageView.image = image
+                }
+            }
+            
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: titleCellIdentifier, for: indexPath) as! TextCell
             cell.titleName = "Group name"
             cell.descriptionName = "Body part, week day or anything else"
             cell.titleTextField.addTarget(self, action: #selector(editingChanged(sender:)), for: .editingChanged)
+            
+            if (mode == .edit) {
+                cell.titleTextField.text = groupData?.title
+            }
+            
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: titleCellIdentifier, for: indexPath) as! TextCell
             cell.titleName = "Description"
             cell.descriptionName = "Type any additional information you need"
+            
+            if (mode == .edit) {
+                cell.titleTextField.text = groupData?.subtitle
+            }
+            
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: typeCellIdentifier, for: indexPath) as! TypeCell
             cell.titleName = "Type"
+            
+            if (mode == .edit) {
+                cell.type = groupData?.type ?? .strength
+            }
+            
             return cell
         }
     }

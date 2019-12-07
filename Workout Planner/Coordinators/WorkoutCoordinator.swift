@@ -29,18 +29,31 @@ class WorkoutCoordinator: Coordinator {
         presentationController = vc
     }
     
-    func createNewGroup() {
-        let vc = CreateGroupVC()
+    func createNewGroup(mode: ModeTypes, groupData: Group?, indexPath: IndexPath?) {
+        let vc = CreateGroupVC(mode: mode)
+        
+        if mode == .edit {
+            vc.groupData = groupData
+            vc.indexPath = indexPath
+        }
+        
         let navController = UINavigationController(rootViewController: vc)
         navController.navigationBar.tintColor = .orange
         vc.coordinator = self
-        vc.title = "New Group"
+        vc.title = mode == .create ? "New Group" : "Edit Group"
         vc.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveNewGroup))
-        vc.navigationItem.rightBarButtonItem?.isEnabled = false
+        
+        if mode == .create {
+            vc.navigationItem.rightBarButtonItem?.isEnabled = false
+        }
         vc.navigationItem.backBarButtonItem?.tintColor = .orange
         createGroupController = vc
         
         navigationController.present(navController, animated: true)
+    }
+    
+    func dismissController() {
+        navigationController.topViewController?.dismiss(animated: true)
     }
     
     @objc func saveNewGroup() {
@@ -58,7 +71,17 @@ class WorkoutCoordinator: Coordinator {
         let newGroup = Group(title: title!, subtitle: subtitle, image: image, type: type)
         
         let workoutVC = presentationController as? WorkoutsVC
-        workoutVC?.updateData(newGroup: newGroup)
-        navigationController.topViewController?.dismiss(animated: true)
+        
+        if createGroupController?.mode == .edit {
+            guard let indexPath = createGroupController?.indexPath else {
+                dismissController()
+                return
+            }
+            workoutVC?.modifyGroup(group: newGroup, indexPath: indexPath)
+        } else {
+            workoutVC?.createGroup(newGroup: newGroup)
+        }
+
+        dismissController()
     }
 }
