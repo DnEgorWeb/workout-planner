@@ -10,12 +10,14 @@
 		4E1B6B5D23856E2F00CA6F57 /* WorkoutsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B6B5C23856E2F00CA6F57 /* WorkoutsVC.swift */; };
 		4E1B6B5F2385704800CA6F57 /* ProgressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B6B5E2385704800CA6F57 /* ProgressVC.swift */; };
 		4E1B6B61238570B700CA6F57 /* StopwatchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B6B60238570B700CA6F57 /* StopwatchVC.swift */; };
-		4E3795C0238E3E6000593F19 /* CreateGroupDS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3795BF238E3E6000593F19 /* CreateGroupDS.swift */; };
+		4E3795C0238E3E6000593F19 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3795BF238E3E6000593F19 /* DataSource.swift */; };
 		4E3795C2238E3F6900593F19 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3795C1238E3F6900593F19 /* ImageCell.swift */; };
 		4E3795C4238E44DB00593F19 /* CellIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3795C3238E44DB00593F19 /* CellIdentifiers.swift */; };
 		4E3795C7238E79C700593F19 /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3795C6238E79C700593F19 /* TextCell.swift */; };
 		4E3795CB238E7A7900593F19 /* TypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3795CA238E7A7900593F19 /* TypeCell.swift */; };
-		4E3795CD238E7FC400593F19 /* CreateGroupTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3795CC238E7FC400593F19 /* CreateGroupTableDelegate.swift */; };
+		4E3795CD238E7FC400593F19 /* TableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3795CC238E7FC400593F19 /* TableDelegate.swift */; };
+		4E3E18D1239A44D40048EC96 /* CollapseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E18D0239A44D40048EC96 /* CollapseHandler.swift */; };
+		4E3E18D3239A537C0048EC96 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E18D2239A537C0048EC96 /* SectionHeaderView.swift */; };
 		4E53BBCB238A64560086302C /* ProgressCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E53BBCA238A64560086302C /* ProgressCoordinator.swift */; };
 		4E53BBCE238A64AA0086302C /* StopwatchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E53BBCD238A64AA0086302C /* StopwatchCoordinator.swift */; };
 		4E53BBD1238A72530086302C /* WorkoutsDS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E53BBD0238A72530086302C /* WorkoutsDS.swift */; };
@@ -28,7 +30,9 @@
 		4E6B1DE52387F97E006B9CCA /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6B1DE42387F97E006B9CCA /* GroupCell.swift */; };
 		4E6B1DE723882A0C006B9CCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E6B1DE623882A0C006B9CCA /* Assets.xcassets */; };
 		4E6B1DE92388DF34006B9CCA /* GroupTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6B1DE82388DF34006B9CCA /* GroupTypes.swift */; };
-		4E7A83932386CCD200CE9A7F /* CreateGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7A83922386CCD200CE9A7F /* CreateGroupVC.swift */; };
+		4E7A83932386CCD200CE9A7F /* ViewConrtoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7A83922386CCD200CE9A7F /* ViewConrtoller.swift */; };
+		4EAB6F8923992D230065599D /* EditingHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAB6F8823992D230065599D /* EditingHandler.swift */; };
+		4EAB6F8B2399306E0065599D /* PickerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAB6F8A2399306E0065599D /* PickerHandler.swift */; };
 		4ED48B1B2384302600DB7BC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED48B1A2384302600DB7BC3 /* AppDelegate.swift */; };
 		4ED48B1D2384302600DB7BC3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED48B1C2384302600DB7BC3 /* SceneDelegate.swift */; };
 		4ED48B1F2384302600DB7BC3 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED48B1E2384302600DB7BC3 /* MainTabBarController.swift */; };
@@ -40,12 +44,14 @@
 		4E1B6B5C23856E2F00CA6F57 /* WorkoutsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsVC.swift; sourceTree = "<group>"; };
 		4E1B6B5E2385704800CA6F57 /* ProgressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressVC.swift; sourceTree = "<group>"; };
 		4E1B6B60238570B700CA6F57 /* StopwatchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchVC.swift; sourceTree = "<group>"; };
-		4E3795BF238E3E6000593F19 /* CreateGroupDS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupDS.swift; sourceTree = "<group>"; };
+		4E3795BF238E3E6000593F19 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		4E3795C1238E3F6900593F19 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		4E3795C3238E44DB00593F19 /* CellIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellIdentifiers.swift; sourceTree = "<group>"; };
 		4E3795C6238E79C700593F19 /* TextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCell.swift; sourceTree = "<group>"; };
 		4E3795CA238E7A7900593F19 /* TypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCell.swift; sourceTree = "<group>"; };
-		4E3795CC238E7FC400593F19 /* CreateGroupTableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupTableDelegate.swift; sourceTree = "<group>"; };
+		4E3795CC238E7FC400593F19 /* TableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TableDelegate.swift; path = "../New Group/TableDelegate.swift"; sourceTree = "<group>"; };
+		4E3E18D0239A44D40048EC96 /* CollapseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapseHandler.swift; sourceTree = "<group>"; };
+		4E3E18D2239A537C0048EC96 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		4E53BBCA238A64560086302C /* ProgressCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCoordinator.swift; sourceTree = "<group>"; };
 		4E53BBCD238A64AA0086302C /* StopwatchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchCoordinator.swift; sourceTree = "<group>"; };
 		4E53BBD0238A72530086302C /* WorkoutsDS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsDS.swift; sourceTree = "<group>"; };
@@ -58,7 +64,9 @@
 		4E6B1DE42387F97E006B9CCA /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
 		4E6B1DE623882A0C006B9CCA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E6B1DE82388DF34006B9CCA /* GroupTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTypes.swift; sourceTree = "<group>"; };
-		4E7A83922386CCD200CE9A7F /* CreateGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupVC.swift; sourceTree = "<group>"; };
+		4E7A83922386CCD200CE9A7F /* ViewConrtoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConrtoller.swift; sourceTree = "<group>"; };
+		4EAB6F8823992D230065599D /* EditingHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingHandler.swift; sourceTree = "<group>"; };
+		4EAB6F8A2399306E0065599D /* PickerHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerHandler.swift; sourceTree = "<group>"; };
 		4ED48B172384302600DB7BC3 /* Workout Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Workout Planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ED48B1A2384302600DB7BC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4ED48B1C2384302600DB7BC3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,10 +97,43 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		4E53BBD4238A793F0086302C /* Views */ = {
+		4E3E18CF239A44A90048EC96 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				4E3E18D0239A44D40048EC96 /* CollapseHandler.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		4E3E18D4239A6B560048EC96 /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				4E1B6B5E2385704800CA6F57 /* ProgressVC.swift */,
+			);
+			path = Progress;
+			sourceTree = "<group>";
+		};
+		4E3E18D5239A6B630048EC96 /* Stopwatch */ = {
+			isa = PBXGroup;
+			children = (
+				4E1B6B60238570B700CA6F57 /* StopwatchVC.swift */,
+			);
+			path = Stopwatch;
+			sourceTree = "<group>";
+		};
+		4E3E18D6239A76A50048EC96 /* Workouts */ = {
 			isa = PBXGroup;
 			children = (
 				4E53BBD5238A79680086302C /* Workouts.swift */,
+				4E3E18D2239A537C0048EC96 /* SectionHeaderView.swift */,
+			);
+			path = Workouts;
+			sourceTree = "<group>";
+		};
+		4E53BBD4238A793F0086302C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4E3E18D6239A76A50048EC96 /* Workouts */,
 				4E53BBDA238A93620086302C /* CreateGroup.swift */,
 			);
 			path = Views;
@@ -101,10 +142,9 @@
 		4E53BBD9238A928C0086302C /* CreateGroup */ = {
 			isa = PBXGroup;
 			children = (
+				4EAB6F8723992CEA0065599D /* Protocols */,
+				4EAB6F862399296F0065599D /* Main */,
 				4E3795C5238E763900593F19 /* Cells */,
-				4E7A83922386CCD200CE9A7F /* CreateGroupVC.swift */,
-				4E3795CC238E7FC400593F19 /* CreateGroupTableDelegate.swift */,
-				4E3795BF238E3E6000593F19 /* CreateGroupDS.swift */,
 			);
 			path = CreateGroup;
 			sourceTree = "<group>";
@@ -123,12 +163,48 @@
 		4E6B1DF3238915EA006B9CCA /* Workouts */ = {
 			isa = PBXGroup;
 			children = (
-				4E1B6B5C23856E2F00CA6F57 /* WorkoutsVC.swift */,
-				4E53BBD0238A72530086302C /* WorkoutsDS.swift */,
-				4E6B1DE42387F97E006B9CCA /* GroupCell.swift */,
-				4E53BBD2238A77530086302C /* WorkoutsTableViewDelegate.swift */,
+				4E3E18CF239A44A90048EC96 /* Protocols */,
+				4EAB6F8D239935CF0065599D /* Cells */,
+				4EAB6F8C239935070065599D /* Main */,
 			);
 			path = Workouts;
+			sourceTree = "<group>";
+		};
+		4EAB6F862399296F0065599D /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4E7A83922386CCD200CE9A7F /* ViewConrtoller.swift */,
+				4E3795BF238E3E6000593F19 /* DataSource.swift */,
+				4E3795CC238E7FC400593F19 /* TableDelegate.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		4EAB6F8723992CEA0065599D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				4EAB6F8823992D230065599D /* EditingHandler.swift */,
+				4EAB6F8A2399306E0065599D /* PickerHandler.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		4EAB6F8C239935070065599D /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4E1B6B5C23856E2F00CA6F57 /* WorkoutsVC.swift */,
+				4E53BBD0238A72530086302C /* WorkoutsDS.swift */,
+				4E53BBD2238A77530086302C /* WorkoutsTableViewDelegate.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		4EAB6F8D239935CF0065599D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4E6B1DE42387F97E006B9CCA /* GroupCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		4ED48B0E2384302500DB7BC3 = {
@@ -165,11 +241,11 @@
 		4ED48B2E23844C2E00DB7BC3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4E3E18D5239A6B630048EC96 /* Stopwatch */,
+				4E3E18D4239A6B560048EC96 /* Progress */,
 				4E53BBD9238A928C0086302C /* CreateGroup */,
 				4E6B1DF3238915EA006B9CCA /* Workouts */,
 				4ED48B1E2384302600DB7BC3 /* MainTabBarController.swift */,
-				4E1B6B5E2385704800CA6F57 /* ProgressVC.swift */,
-				4E1B6B60238570B700CA6F57 /* StopwatchVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -289,15 +365,19 @@
 				4E6B1DE32387F577006B9CCA /* Group.swift in Sources */,
 				4ED48B1B2384302600DB7BC3 /* AppDelegate.swift in Sources */,
 				4E59C38D238A5B4400209DB4 /* WorkoutCoordinator.swift in Sources */,
-				4E3795C0238E3E6000593F19 /* CreateGroupDS.swift in Sources */,
+				4E3795C0238E3E6000593F19 /* DataSource.swift in Sources */,
 				4E53BBCB238A64560086302C /* ProgressCoordinator.swift in Sources */,
+				4EAB6F8B2399306E0065599D /* PickerHandler.swift in Sources */,
+				4E3E18D3239A537C0048EC96 /* SectionHeaderView.swift in Sources */,
 				4E59C388238A3B6200209DB4 /* Coordinator.swift in Sources */,
 				4E1B6B5D23856E2F00CA6F57 /* WorkoutsVC.swift in Sources */,
 				4E3795C7238E79C700593F19 /* TextCell.swift in Sources */,
+				4EAB6F8923992D230065599D /* EditingHandler.swift in Sources */,
 				4E3795C4238E44DB00593F19 /* CellIdentifiers.swift in Sources */,
-				4E7A83932386CCD200CE9A7F /* CreateGroupVC.swift in Sources */,
-				4E3795CD238E7FC400593F19 /* CreateGroupTableDelegate.swift in Sources */,
+				4E7A83932386CCD200CE9A7F /* ViewConrtoller.swift in Sources */,
+				4E3795CD238E7FC400593F19 /* TableDelegate.swift in Sources */,
 				4E53BBD6238A79680086302C /* Workouts.swift in Sources */,
+				4E3E18D1239A44D40048EC96 /* CollapseHandler.swift in Sources */,
 				4ED48B1D2384302600DB7BC3 /* SceneDelegate.swift in Sources */,
 				4E3795C2238E3F6900593F19 /* ImageCell.swift in Sources */,
 				4E3795CB238E7A7900593F19 /* TypeCell.swift in Sources */,

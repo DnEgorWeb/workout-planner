@@ -6,10 +6,11 @@
 //  Copyright © 2562 Egor Deryabin. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct Group {
     var title: String
     var subtitle: String?
-    var imageName: String?
+    var image: UIImage?
+    var type: GroupTypes?
 }

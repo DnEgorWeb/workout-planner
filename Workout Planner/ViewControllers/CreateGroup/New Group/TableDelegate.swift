@@ -9,7 +9,7 @@
 import UIKit
 
 class CreateGroupTableDelegate: NSObject, UITableViewDelegate {
-    weak var presentationController: UIViewController?
+    weak var delegate: PickerHandler?
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
@@ -24,11 +24,7 @@ class CreateGroupTableDelegate: NSObject, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-            guard let vc = presentationController as? CreateGroupVC else { return }
-            guard let createGroupView = vc.view as? CreateGroup else { return }
-            let imagePicker = createGroupView.imagePicker
-            imagePicker.sourceType = .photoLibrary
-            presentationController?.present(imagePicker, animated: true)
+            delegate?.presentPicker()
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }

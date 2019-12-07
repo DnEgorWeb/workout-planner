@@ -21,6 +21,9 @@ class WorkoutsVC: UIViewController {
         workoutsView.tableView.register(GroupCell.self, forCellReuseIdentifier: cellIdentifier)
         workoutsView.tableView.dataSource = dataSource
         workoutsView.tableView.delegate = tableDelegate
+        workoutsView.tableView.register(SectionHeaderView.self, forHeaderFooterViewReuseIdentifier: SectionHeaderView.reuseIdentifier)
+        
+        tableDelegate.delegate = self
         
         setupSections()
         setupNewGroupButton()
@@ -39,6 +42,12 @@ class WorkoutsVC: UIViewController {
         newWorkoutButton.tintColor = .orange
         navigationItem.rightBarButtonItem = newWorkoutButton
     }
+    
+    func updateData(newGroup: Group) {
+        dataSource.workoutsData[newGroup.type!]?.append(newGroup)
+        let view = self.view as? Workouts
+        view?.tableView.reloadData()
+    }
 }
 
 // MARK: - Selectors
@@ -49,5 +58,17 @@ extension WorkoutsVC {
     
     @objc func segmentedControlTapped(sender: UISegmentedControl) {
         navigationItem.rightBarButtonItem?.isEnabled = sender.selectedSegmentIndex != 2
+    }
+}
+
+extension WorkoutsVC: CollapseHandler {
+    func collapse(section: Int) {
+        let sectionType = GroupTypes.allCases[section]
+        dataSource.collapseSectionsState[sectionType]?.toggle()
+        let view = self.view as? Workouts
+        
+        view?.tableView.beginUpdates()
+        view?.tableView.reloadSections([section], with: .fade)
+        view?.tableView.endUpdates()
     }
 }

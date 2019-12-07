@@ -11,11 +11,11 @@ import UIKit
 class GroupCell: UITableViewCell {
     // MARK - properties
     var currentWorkout: Group? {
-        willSet {
-            title.text = newValue?.title
-            subTitle.text = newValue?.subtitle
-            let imageName = newValue?.imageName ?? "emptyGroup"
-            groupImage.image = UIImage(named: imageName)
+        didSet {
+            title.text = currentWorkout?.title
+            subTitle.text = currentWorkout?.subtitle
+            let image = currentWorkout?.image ?? UIImage(named: "emptyGroup")
+            groupImage.image = image
         }
     }
     

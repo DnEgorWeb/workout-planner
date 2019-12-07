@@ -9,8 +9,9 @@
 import UIKit
 
 class WorkoutCoordinator: Coordinator {
-    var childCoordinator = [Coordinator]()
+    weak var presentationController: UIViewController?
     var navigationController: UINavigationController
+    weak var createGroupController: CreateGroupVC?
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -25,6 +26,7 @@ class WorkoutCoordinator: Coordinator {
         vc.tabBarItem = UITabBarItem(title: "Workouts", image: UIImage(named: "workouts"), tag: 0)
         navigationController.navigationBar.tintColor = .orange
         navigationController.pushViewController(vc, animated: true)
+        presentationController = vc
     }
     
     func createNewGroup() {
@@ -36,11 +38,27 @@ class WorkoutCoordinator: Coordinator {
         vc.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveNewGroup))
         vc.navigationItem.rightBarButtonItem?.isEnabled = false
         vc.navigationItem.backBarButtonItem?.tintColor = .orange
+        createGroupController = vc
         
         navigationController.present(navController, animated: true)
     }
     
     @objc func saveNewGroup() {
+        guard let createGroupView = createGroupController?.view as? CreateGroup else { return }
+        
+        let imageCell = createGroupView.tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? ImageCell
+        let image = imageCell?.groupImageView.image
+        let titleCell = createGroupView.tableView.cellForRow(at: IndexPath(row: 1, section: 0)) as? TextCell
+        let title = titleCell?.titleTextField.text
+        let typeCell = createGroupView.tableView.cellForRow(at: IndexPath(row: 3, section: 0)) as? TypeCell
+        let type = typeCell?.type
+        let subtitleCell = createGroupView.tableView.cellForRow(at: IndexPath(row: 2, section: 0))  as? TextCell
+        let subtitle = subtitleCell?.titleTextField.text
+        
+        let newGroup = Group(title: title!, subtitle: subtitle, image: image, type: type)
+        
+        let workoutVC = presentationController as? WorkoutsVC
+        workoutVC?.updateData(newGroup: newGroup)
         navigationController.topViewController?.dismiss(animated: true)
     }
 }

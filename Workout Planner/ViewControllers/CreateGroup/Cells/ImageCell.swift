@@ -38,7 +38,7 @@ class ImageCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+ 
     func addSubviews() {
         backgroundColor = #colorLiteral(red: 0.3272230029, green: 0.7569765449, blue: 0.9854061007, alpha: 1)
         

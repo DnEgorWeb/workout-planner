@@ -9,7 +9,7 @@
 import UIKit
 
 class ProgressCoordinator: Coordinator {
-    var childCoordinator = [Coordinator]()
+    var presentationController: UIViewController?
     var navigationController: UINavigationController
 
     init(navigationController: UINavigationController) {

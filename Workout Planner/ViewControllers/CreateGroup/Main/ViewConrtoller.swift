@@ -11,6 +11,7 @@ import UIKit
 class CreateGroupVC: UIViewController {
     // MARK: - Properties
     weak var coordinator: WorkoutCoordinator?
+    private var tableView: UITableView?
     private var dataSource = CreateGroupDS()
     private var tableDelegate = CreateGroupTableDelegate()
     
@@ -23,26 +24,46 @@ class CreateGroupVC: UIViewController {
         super.loadView()
 
         let createGroup = CreateGroup(frame: self.view.frame)
-        tableDelegate.presentationController = self
-        dataSource.presentationController = self
+        tableView = createGroup.tableView
         
-        createGroup.tableView.register(ImageCell.self, forCellReuseIdentifier: imageCellIdentifier)
-        createGroup.tableView.register(TextCell.self, forCellReuseIdentifier: titleCellIdentifier)
-        createGroup.tableView.register(TypeCell.self, forCellReuseIdentifier: typeCellIdentifier)
+        tableView?.register(ImageCell.self, forCellReuseIdentifier: imageCellIdentifier)
+        tableView?.register(TextCell.self, forCellReuseIdentifier: titleCellIdentifier)
+        tableView?.register(TypeCell.self, forCellReuseIdentifier: typeCellIdentifier)
         
-        createGroup.tableView.dataSource = dataSource
-        createGroup.tableView.delegate = tableDelegate
+        tableView?.dataSource = dataSource
+        tableView?.delegate = tableDelegate
         createGroup.imagePicker.delegate = self
         
         view = createGroup
+        
+        tableDelegate.delegate = self
+        dataSource.delegate = self
     }
 }
 
 extension CreateGroupVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        guard let createGroupView = view as? CreateGroup else { return }
-        guard let cell = createGroupView.tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? ImageCell else { return }
+        guard let cell = tableView?.cellForRow(at: IndexPath(row: 0, section: 0)) as? ImageCell else { return }
         cell.groupImageView.image = info[.editedImage] as? UIImage
         dismiss(animated: true)
+    }
+}
+
+extension CreateGroupVC: EditingHandler {
+    func editingChanged(sender: UITextField) {
+        guard let text = sender.text else { return }
+        let rightBarButtonItem = self.navigationItem.rightBarButtonItem
+        
+        rightBarButtonItem?.isEnabled = text.count > 0 ? true : false
+    }
+}
+
+extension CreateGroupVC: PickerHandler {
+    func presentPicker() {
+        guard let view = view as? CreateGroup else { return }
+        view.endEditing(false)
+        let imagePicker = view.imagePicker
+        imagePicker.sourceType = .photoLibrary
+        present(imagePicker, animated: true)
     }
 }

@@ -9,27 +9,29 @@
 import UIKit
 
 class WorkoutsDS: NSObject, UITableViewDataSource {
-    private var defaultData: [GroupTypes: [Group]] = [
-        .srength: [
-            Group(title: "Monday", subtitle: "Hands and chest", imageName: nil),
-            Group(title: "Friday", subtitle: "Legs and ABS", imageName: nil),
+    var workoutsData: [GroupTypes: [Group]] = [
+        .strength: [
+            Group(title: "Monday", subtitle: "Hands and chest", image: nil),
+            Group(title: "Friday", subtitle: "Legs and ABS", image: nil),
         ],
         .cardio: [
-            Group(title: "Tabata", subtitle: "Legs", imageName: nil),
+            Group(title: "Tabata", subtitle: "Legs", image: nil),
         ],
         .custom: [
-            Group(title: "Group title", subtitle: "Group subtitle", imageName: nil),
+            Group(title: "Group title", subtitle: "Group subtitle", image: nil),
         ]
     ]
+    var collapseSectionsState: [GroupTypes: Bool] = [.strength: false, .cardio: false, .custom: false]
     private let groupCell = CellIdentifiers.workouts.rawValue
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return defaultData.count
+        return workoutsData.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let sectionType = GroupTypes.allCases[section]
-        guard let sectionData = defaultData[sectionType] else { return 0 }
+        if collapseSectionsState[sectionType] == true { return 0 }
+        guard let sectionData = workoutsData[sectionType] else { return 0 }
         return sectionData.count
     }
     
@@ -38,7 +40,7 @@ class WorkoutsDS: NSObject, UITableViewDataSource {
         let sectionNumber = indexPath.section
         let sectionType = GroupTypes.allCases[sectionNumber]
         let rowNumber = indexPath.row
-        let currentGroup = defaultData[sectionType]
+        let currentGroup = workoutsData[sectionType]
         let currentWorkout = currentGroup?[rowNumber]
         cell.currentWorkout = currentWorkout
         return cell

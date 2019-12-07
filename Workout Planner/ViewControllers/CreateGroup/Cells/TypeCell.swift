@@ -10,6 +10,7 @@ import UIKit
 
 class TypeCell: UITableViewCell {
     private var safeArea: UILayoutGuide!
+    var type: GroupTypes = .strength
     
     var titleName: String? {
         didSet {
@@ -86,14 +87,24 @@ extension TypeCell: UIPickerViewDelegate, UIPickerViewDataSource {
         return 3
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        type = getGroupType(row: row)
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let type = getGroupType(row: row)
+        
+        return NSAttributedString(string: type.rawValue, attributes: [NSAttributedString.Key.foregroundColor: UIColor.orange])
+    }
+    
+    func getGroupType(row: Int) -> GroupTypes {
         switch row {
         case 0:
-            return "Strength"
+            return .strength
         case 1:
-            return "Cardio"
+            return .cardio
         default:
-            return "Custom"
+            return .custom
         }
     }
 }

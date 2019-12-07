@@ -9,7 +9,7 @@
 import Foundation
 
 enum GroupTypes: String, CaseIterable {
-    case srength = "Strength training"
-    case cardio = "Cardio training"
-    case custom = "Custom training"
+    case strength = "Strength"
+    case cardio = "Cardio"
+    case custom = "Custom"
 }

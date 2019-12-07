@@ -76,6 +76,7 @@ class TextCell: UITableViewCell {
         addSubview(titleTextField)
         titleTextField.translatesAutoresizingMaskIntoConstraints = false
         titleTextField.delegate = self
+        titleTextField.textColor = .orange
         
         titleTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15).isActive = true
         titleTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15).isActive = true

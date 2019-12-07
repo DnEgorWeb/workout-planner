@@ -9,7 +9,7 @@
 import UIKit
 
 class CreateGroupDS: NSObject, UITableViewDataSource {
-    weak var presentationController: UIViewController?
+    weak var delegate: EditingHandler?
     private let imageCellIdentifier = CellIdentifiers.createGroupImage.rawValue
     private let titleCellIdentifier = CellIdentifiers.createGroupTitle.rawValue
     private let subtitleCellIdentifier = CellIdentifiers.createGroupSubtitle.rawValue
@@ -47,9 +47,6 @@ class CreateGroupDS: NSObject, UITableViewDataSource {
     }
     
     @objc func editingChanged(sender: UITextField) {
-        guard let text = sender.text else { return }
-        let rightBarButtonItem = presentationController?.navigationItem.rightBarButtonItem
-        
-        rightBarButtonItem?.isEnabled = text.count > 0 ? true : false
+        delegate?.editingChanged(sender: sender)
     }
 }
