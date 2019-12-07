@@ -14,7 +14,7 @@ class GroupCell: UITableViewCell {
         didSet {
             title.text = currentWorkout?.title
             subTitle.text = currentWorkout?.subtitle
-            let image = currentWorkout?.image ?? UIImage(named: "emptyGroup")
+            let image = currentWorkout?.image ?? UIImage(named: "photoPlaceholder")
             groupImage.image = image
             type = currentWorkout?.type
         }
