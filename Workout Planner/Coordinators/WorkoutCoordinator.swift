@@ -62,14 +62,14 @@ class WorkoutCoordinator: Coordinator {
     @objc func saveNewGroup() {
         guard let createGroupView = createGroupController?.view as? CreateGroup else { return }
         
-        let imageCell = createGroupView.tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? ImageCell
-        let image = imageCell?.groupImageView.image
-        let titleCell = createGroupView.tableView.cellForRow(at: IndexPath(row: 1, section: 0)) as? TextCell
-        let title = titleCell?.titleTextField.text
-        let typeCell = createGroupView.tableView.cellForRow(at: IndexPath(row: 3, section: 0)) as? TypeCell
-        let type = typeCell?.type
-        let subtitleCell = createGroupView.tableView.cellForRow(at: IndexPath(row: 2, section: 0))  as? TextCell
-        let subtitle = subtitleCell?.titleTextField.text
+        guard let imageCell = createGroupView.tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? ImageCell else { return }
+        let image = imageCell.groupImageView.image
+        guard let titleCell = createGroupView.tableView.cellForRow(at: IndexPath(row: 1, section: 0)) as? TextCell else { return }
+        let title = titleCell.titleTextField.text
+        guard let typeCell = createGroupView.tableView.cellForRow(at: IndexPath(row: 3, section: 0)) as? TypeCell else { return }
+        let type = typeCell.type
+        guard let subtitleCell = createGroupView.tableView.cellForRow(at: IndexPath(row: 2, section: 0))  as? TextCell  else { return }
+        let subtitle = subtitleCell.titleTextField.text
         
         let newGroup = Group(title: title!, subtitle: subtitle, image: image, type: type)
         

@@ -7,10 +7,24 @@
 //
 
 import UIKit
+import RealmSwift
 
-struct Group {
-    var title: String
-    var subtitle: String?
-    var image: UIImage?
-    var type: GroupTypes?
+class Group: Object {
+    @objc dynamic var title: String = ""
+    @objc dynamic var subtitle: String?
+    @objc dynamic var image: Data?
+    private dynamic var typeRaw: String = GroupTypes.custom.rawValue
+    var type: GroupTypes {
+        get { return GroupTypes(rawValue: typeRaw) ?? GroupTypes.custom }
+        set { typeRaw = newValue.rawValue }
+    }
+    
+    convenience init(title: String, subtitle: String?, image: UIImage?, type: GroupTypes) {
+        self.init()
+        
+        self.title = title
+        self.subtitle = subtitle
+        self.image = image?.pngData()
+        self.type = type
+    }
 }

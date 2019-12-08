@@ -51,7 +51,7 @@ class WorkoutsVC: UIViewController {
             createGroup(newGroup: group)
             return
         } else {
-            dataSource.workoutsData[group.type!]?[indexPath.row] = group
+            dataSource.workoutsData[group.type]?[indexPath.row] = group
         }
 
         let view = self.view as? Workouts
@@ -59,7 +59,7 @@ class WorkoutsVC: UIViewController {
     }
     
     func createGroup(newGroup: Group) {
-        dataSource.workoutsData[newGroup.type!]?.append(newGroup)
+        dataSource.workoutsData[newGroup.type]?.append(newGroup)
         let view = self.view as? Workouts
         view?.tableView.reloadData()
     }
@@ -103,10 +103,12 @@ extension WorkoutsVC: ActionsHandler {
             self.dataSource.workoutsData[sectionType]?.remove(at: indexPath.row)
             
             completionHandler(true)
+            self.workoutsView.tableView.reloadData()
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in
             completionHandler(false)
+            self.workoutsView.tableView.reloadData()
         }
         
         ac.addAction(okAction)

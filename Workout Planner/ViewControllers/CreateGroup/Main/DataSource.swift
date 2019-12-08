@@ -31,8 +31,8 @@ class CreateGroupDS: NSObject, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: imageCellIdentifier, for: indexPath) as! ImageCell
             
             if (mode == .edit) {
-                if let image = groupData?.image {
-                    cell.groupImageView.image = image
+                if let imageData = groupData?.image {
+                    cell.groupImageView.image = UIImage(data: imageData)
                     cell.backgroundColor = .none
                 }
             }
