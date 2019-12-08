@@ -24,7 +24,6 @@ class WorkoutCoordinator: Coordinator {
         let vc = WorkoutsVC()
         vc.coordinator = self
         vc.tabBarItem = UITabBarItem(title: "Workouts", image: UIImage(named: "workouts"), tag: 0)
-        navigationController.navigationBar.tintColor = .orange
         navigationController.pushViewController(vc, animated: true)
         presentationController = vc
     }
@@ -38,21 +37,25 @@ class WorkoutCoordinator: Coordinator {
         }
         
         let navController = UINavigationController(rootViewController: vc)
-        navController.navigationBar.tintColor = .orange
+
         vc.coordinator = self
         vc.title = mode == .create ? "New Group" : "Edit Group"
+        
         vc.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveNewGroup))
+        vc.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(dismissController))
+        
+        vc.navigationItem.rightBarButtonItem?.tintColor = .orange
+        vc.navigationItem.leftBarButtonItem?.tintColor = .orange
         
         if mode == .create {
             vc.navigationItem.rightBarButtonItem?.isEnabled = false
         }
-        vc.navigationItem.backBarButtonItem?.tintColor = .orange
         createGroupController = vc
         
         navigationController.present(navController, animated: true)
     }
     
-    func dismissController() {
+    @objc func dismissController() {
         navigationController.topViewController?.dismiss(animated: true)
     }
     

@@ -63,6 +63,7 @@ extension CreateGroupVC: UIImagePickerControllerDelegate, UINavigationController
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let cell = tableView?.cellForRow(at: IndexPath(row: 0, section: 0)) as? ImageCell else { return }
         cell.groupImageView.image = info[.editedImage] as? UIImage
+        cell.backgroundColor = .none
         dismiss(animated: true)
     }
 }

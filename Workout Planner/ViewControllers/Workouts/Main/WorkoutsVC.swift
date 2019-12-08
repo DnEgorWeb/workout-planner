@@ -47,11 +47,9 @@ class WorkoutsVC: UIViewController {
     func modifyGroup(group: Group, indexPath: IndexPath) {
         guard let cell = workoutsView.tableView.cellForRow(at: indexPath) as? GroupCell else { return }
         if cell.type != group.type {
-            // fix this block
             dataSource.workoutsData[cell.type!]?.remove(at: indexPath.row)
             createGroup(newGroup: group)
             return
-            // end of fix
         } else {
             dataSource.workoutsData[group.type!]?[indexPath.row] = group
         }
@@ -104,12 +102,11 @@ extension WorkoutsVC: ActionsHandler {
             let sectionType = GroupTypes.allCases[indexPath.section]
             self.dataSource.workoutsData[sectionType]?.remove(at: indexPath.row)
             
-            guard let view = self.view as? Workouts else { return }
-            view.tableView.deleteRows(at: [indexPath], with: .fade)
+            completionHandler(true)
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in
-            completionHandler(true)
+            completionHandler(false)
         }
         
         ac.addAction(okAction)

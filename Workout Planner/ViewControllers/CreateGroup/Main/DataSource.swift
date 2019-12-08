@@ -33,6 +33,7 @@ class CreateGroupDS: NSObject, UITableViewDataSource {
             if (mode == .edit) {
                 if let image = groupData?.image {
                     cell.groupImageView.image = image
+                    cell.backgroundColor = .none
                 }
             }
             

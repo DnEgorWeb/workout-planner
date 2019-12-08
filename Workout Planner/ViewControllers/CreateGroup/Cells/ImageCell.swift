@@ -12,7 +12,7 @@ class ImageCell: UITableViewCell {
     let groupImageView: UIImageView = {
         let imgView = UIImageView()
         imgView.image = UIImage(named: "photoPlaceholder")
-        imgView.contentMode = .scaleAspectFit
+        imgView.contentMode = .scaleAspectFill
         
         return imgView
     }()
@@ -45,6 +45,7 @@ class ImageCell: UITableViewCell {
         
         groupImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         groupImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        groupImageView.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        groupImageView.heightAnchor.constraint(equalToConstant: 120).isActive = true
+        groupImageView.widthAnchor.constraint(equalToConstant: 160).isActive = true
     }
 }

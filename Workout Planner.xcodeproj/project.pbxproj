@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -38,9 +38,11 @@
 		4ED48B1F2384302600DB7BC3 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED48B1E2384302600DB7BC3 /* MainTabBarController.swift */; };
 		4ED48B272384303100DB7BC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ED48B252384303100DB7BC3 /* LaunchScreen.storyboard */; };
 		4ED48B3423844CB000DB7BC3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ED48B3323844CB000DB7BC3 /* Default-568h@2x.png */; };
+		E3FC42EF9F7342FD0BD104C1 /* Pods_Workout_Planner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 904BCDC5E281A0913299D6F2 /* Pods_Workout_Planner.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07ED6559AF6D8A71EC247E9C /* Pods-Workout Planner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Workout Planner.release.xcconfig"; path = "Target Support Files/Pods-Workout Planner/Pods-Workout Planner.release.xcconfig"; sourceTree = "<group>"; };
 		4E1B6B5C23856E2F00CA6F57 /* WorkoutsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsVC.swift; sourceTree = "<group>"; };
 		4E1B6B5E2385704800CA6F57 /* ProgressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressVC.swift; sourceTree = "<group>"; };
 		4E1B6B60238570B700CA6F57 /* StopwatchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchVC.swift; sourceTree = "<group>"; };
@@ -74,6 +76,8 @@
 		4ED48B262384303100DB7BC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4ED48B282384303100DB7BC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4ED48B3323844CB000DB7BC3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		904BCDC5E281A0913299D6F2 /* Pods_Workout_Planner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Workout_Planner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2A7B3658B6880D4EE1A5E4A /* Pods-Workout Planner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Workout Planner.debug.xcconfig"; path = "Target Support Files/Pods-Workout Planner/Pods-Workout Planner.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3FC42EF9F7342FD0BD104C1 /* Pods_Workout_Planner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,6 +218,8 @@
 				4ED48B3323844CB000DB7BC3 /* Default-568h@2x.png */,
 				4ED48B192384302600DB7BC3 /* Workout Planner */,
 				4ED48B182384302600DB7BC3 /* Products */,
+				6747EE60C0041ED33ACC9893 /* Pods */,
+				9224DC6099DC14B5912A111A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -286,6 +293,23 @@
 			path = Supports;
 			sourceTree = "<group>";
 		};
+		6747EE60C0041ED33ACC9893 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B2A7B3658B6880D4EE1A5E4A /* Pods-Workout Planner.debug.xcconfig */,
+				07ED6559AF6D8A71EC247E9C /* Pods-Workout Planner.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9224DC6099DC14B5912A111A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				904BCDC5E281A0913299D6F2 /* Pods_Workout_Planner.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -293,9 +317,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4ED48B2B2384303100DB7BC3 /* Build configuration list for PBXNativeTarget "Workout Planner" */;
 			buildPhases = (
+				D3AE746360B9C5196470A358 /* [CP] Check Pods Manifest.lock */,
 				4ED48B132384302600DB7BC3 /* Sources */,
 				4ED48B142384302600DB7BC3 /* Frameworks */,
 				4ED48B152384302600DB7BC3 /* Resources */,
+				FD6B24098766CB37DBB46BC8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -351,6 +377,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D3AE746360B9C5196470A358 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Workout Planner-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD6B24098766CB37DBB46BC8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Workout Planner/Pods-Workout Planner-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Workout Planner/Pods-Workout Planner-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Workout Planner/Pods-Workout Planner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4ED48B132384302600DB7BC3 /* Sources */ = {
@@ -452,7 +520,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -506,7 +574,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -518,6 +586,7 @@
 		};
 		4ED48B2C2384303100DB7BC3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2A7B3658B6880D4EE1A5E4A /* Pods-Workout Planner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -536,6 +605,7 @@
 		};
 		4ED48B2D2384303100DB7BC3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07ED6559AF6D8A71EC247E9C /* Pods-Workout Planner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -30,6 +30,9 @@ class Workouts: UIView {
     
     func setupSections() {
         workoutModes.selectedSegmentIndex = 0
+        if #available(iOS 13, *) {} else {
+            workoutModes.tintColor = #colorLiteral(red: 0.3254901961, green: 0.7568627451, blue: 0.9843137255, alpha: 1)
+        }
     }
     
     func setupTableView() {
