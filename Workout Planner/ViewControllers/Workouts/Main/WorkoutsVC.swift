@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class WorkoutsVC: UIViewController {
     weak var coordinator: WorkoutCoordinator?
@@ -17,6 +18,8 @@ class WorkoutsVC: UIViewController {
 
     override func loadView() {
         super.loadView()
+        
+        getData()
         
         workoutsView.tableView.register(GroupCell.self, forCellReuseIdentifier: cellIdentifier)
         workoutsView.tableView.dataSource = dataSource
@@ -30,6 +33,14 @@ class WorkoutsVC: UIViewController {
         setupNewGroupButton()
         
         view = workoutsView
+    }
+    
+    func getData() {
+        let realm = try! Realm()
+        let groups = realm.objects(Group.self)
+        for group in groups {
+            dataSource.workoutsData[group.type]?.append(group)
+        }
     }
     
     func setupSections() {
@@ -46,6 +57,10 @@ class WorkoutsVC: UIViewController {
     
     func modifyGroup(group: Group, indexPath: IndexPath) {
         guard let cell = workoutsView.tableView.cellForRow(at: indexPath) as? GroupCell else { return }
+        guard let oldGroup = dataSource.workoutsData[cell.type!]?[indexPath.row] else { return }
+        
+        StorageManager.updateObject(oldGroup: oldGroup, newGroup: group)
+        
         if cell.type != group.type {
             dataSource.workoutsData[cell.type!]?.remove(at: indexPath.row)
             createGroup(newGroup: group)
@@ -100,10 +115,16 @@ extension WorkoutsVC: ActionsHandler {
         
         let okAction = UIAlertAction(title: "Ok", style: .default) { (_) in
             let sectionType = GroupTypes.allCases[indexPath.section]
+            guard let section = self.dataSource.workoutsData[sectionType] else {
+                completionHandler(false)
+                return
+            }
+
             self.dataSource.workoutsData[sectionType]?.remove(at: indexPath.row)
+            self.workoutsView.tableView.deleteRows(at: [indexPath], with: .fade)
+            StorageManager.deleteObject(section[indexPath.row])
             
             completionHandler(true)
-            self.workoutsView.tableView.reloadData()
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in

@@ -13,9 +13,11 @@ class Group: Object {
     @objc dynamic var title: String = ""
     @objc dynamic var subtitle: String?
     @objc dynamic var image: Data?
-    private dynamic var typeRaw: String = GroupTypes.custom.rawValue
+    @objc private dynamic var typeRaw: String?
     var type: GroupTypes {
-        get { return GroupTypes(rawValue: typeRaw) ?? GroupTypes.custom }
+        get {
+            return GroupTypes(rawValue: typeRaw ?? GroupTypes.custom.rawValue) ?? GroupTypes.custom
+        }
         set { typeRaw = newValue.rawValue }
     }
     
@@ -25,6 +27,7 @@ class Group: Object {
         self.title = title
         self.subtitle = subtitle
         self.image = image?.pngData()
+        self.typeRaw = type.rawValue
         self.type = type
     }
 }

@@ -83,6 +83,7 @@ class WorkoutCoordinator: Coordinator {
             workoutVC?.modifyGroup(group: newGroup, indexPath: indexPath)
         } else {
             workoutVC?.createGroup(newGroup: newGroup)
+            StorageManager.saveObject(newGroup)
         }
 
         dismissController()
