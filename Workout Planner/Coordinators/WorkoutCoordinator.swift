@@ -22,10 +22,14 @@ class WorkoutCoordinator: Coordinator {
     
     func start() {
         let vc = WorkoutsVC()
+
         vc.coordinator = self
         vc.tabBarItem = UITabBarItem(title: "Workouts", image: UIImage(named: "workouts"), tag: 0)
         navigationController.pushViewController(vc, animated: true)
         presentationController = vc
+        
+        setupSections()
+        setupNewGroupButton()
     }
     
     func createNewGroup(mode: ModeTypes, groupData: Group?, indexPath: IndexPath?) {
@@ -87,5 +91,38 @@ class WorkoutCoordinator: Coordinator {
         }
 
         dismissController()
+    }
+}
+
+// MARK: header
+extension WorkoutCoordinator {
+    func setupSections() {
+        let workoutModes = UISegmentedControl(items: ["My workouts", "Exercises", "Programs"])
+        workoutModes.selectedSegmentIndex = 0
+        
+        if #available(iOS 13, *) {} else {
+            workoutModes.tintColor = #colorLiteral(red: 0.3254901961, green: 0.7568627451, blue: 0.9843137255, alpha: 1)
+        }
+        
+        workoutModes.addTarget(self, action: #selector(segmentedControlTapped(sender:)), for: .valueChanged)
+        presentationController?.navigationItem.titleView = workoutModes
+    }
+    
+    func setupNewGroupButton() {
+        let newWorkoutButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(newGroupTapped))
+        newWorkoutButton.tintColor = .orange
+        presentationController?.navigationItem.rightBarButtonItem = newWorkoutButton
+    }
+    
+    @objc func newGroupTapped() {
+        createNewGroup(mode: .create, groupData: nil, indexPath: nil)
+    }
+    
+    @objc func segmentedControlTapped(sender: UISegmentedControl) {
+        let selectedIndex = sender.selectedSegmentIndex
+        presentationController?.navigationItem.rightBarButtonItem?.isEnabled = selectedIndex != 2
+        
+        guard let vc = presentationController as? WorkoutsVC else { return }
+        vc.workoutsView.isHidden = selectedIndex != 0
     }
 }

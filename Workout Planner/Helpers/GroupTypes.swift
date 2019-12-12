@@ -11,6 +11,7 @@ import Foundation
 enum GroupTypes: String, CaseIterable {
     case strength = "Strength"
     case cardio = "Cardio"
+    case stretch = "Stretch"
     case custom = "Custom"
 }
 

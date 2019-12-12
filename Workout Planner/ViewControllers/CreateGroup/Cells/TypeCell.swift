@@ -89,7 +89,7 @@ extension TypeCell: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 3
+        return 4
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -108,8 +108,10 @@ extension TypeCell: UIPickerViewDelegate, UIPickerViewDataSource {
             return 0
         case .cardio:
             return 1
-        default:
+        case .stretch:
             return 2
+        default:
+            return 3
         }
     }
     
@@ -119,6 +121,8 @@ extension TypeCell: UIPickerViewDelegate, UIPickerViewDataSource {
             return .strength
         case 1:
             return .cardio
+        case 2:
+            return .stretch
         default:
             return .custom
         }

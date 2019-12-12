@@ -13,6 +13,7 @@ class ImageCell: UITableViewCell {
         let imgView = UIImageView()
         imgView.image = UIImage(named: "photoPlaceholder")
         imgView.contentMode = .scaleAspectFill
+        imgView.clipsToBounds = true
         
         return imgView
     }()

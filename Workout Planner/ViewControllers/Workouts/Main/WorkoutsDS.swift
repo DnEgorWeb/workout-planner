@@ -9,7 +9,7 @@
 import UIKit
 
 class WorkoutsDS: NSObject, UITableViewDataSource {
-    var workoutsData: [GroupTypes: [Group]] = [.strength: [], .cardio: [], .custom: []]
+    var workoutsData: [GroupTypes: [Group]] = [.strength: [], .cardio: [], .stretch: [], .custom: []]
     var collapseSectionsState: [GroupTypes: Bool] = [.strength: false, .cardio: false, .custom: false]
     private let groupCell = CellIdentifiers.workouts.rawValue
     

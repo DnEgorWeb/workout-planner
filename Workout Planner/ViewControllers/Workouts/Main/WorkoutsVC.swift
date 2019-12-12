@@ -11,7 +11,7 @@ import RealmSwift
 
 class WorkoutsVC: UIViewController {
     weak var coordinator: WorkoutCoordinator?
-    private var workoutsView = Workouts()
+    let workoutsView = Workouts()
     private var dataSource = WorkoutsDS()
     private var tableDelegate = WorkoutsTableViewDelegate()
     private let cellIdentifier = CellIdentifiers.workouts.rawValue
@@ -29,9 +29,6 @@ class WorkoutsVC: UIViewController {
         
         tableDelegate.delegate = self
         
-        setupSections()
-        setupNewGroupButton()
-        
         view = workoutsView
     }
     
@@ -41,18 +38,6 @@ class WorkoutsVC: UIViewController {
         for group in groups {
             dataSource.workoutsData[group.type]?.append(group)
         }
-    }
-    
-    func setupSections() {
-        let workoutModes = workoutsView.workoutModes
-        workoutModes.addTarget(self, action: #selector(segmentedControlTapped(sender:)), for: .valueChanged)
-        navigationItem.titleView = workoutModes
-    }
-    
-    func setupNewGroupButton() {
-        let newWorkoutButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(newGroupTapped))
-        newWorkoutButton.tintColor = .orange
-        navigationItem.rightBarButtonItem = newWorkoutButton
     }
     
     func modifyGroup(group: Group, indexPath: IndexPath) {
@@ -77,17 +62,6 @@ class WorkoutsVC: UIViewController {
         dataSource.workoutsData[newGroup.type]?.append(newGroup)
         let view = self.view as? Workouts
         view?.tableView.reloadData()
-    }
-}
-
-// MARK: - Selectors
-extension WorkoutsVC {
-    @objc func newGroupTapped() {
-        coordinator?.createNewGroup(mode: .create, groupData: nil, indexPath: nil)
-    }
-    
-    @objc func segmentedControlTapped(sender: UISegmentedControl) {
-        navigationItem.rightBarButtonItem?.isEnabled = sender.selectedSegmentIndex != 2
     }
 }
 
