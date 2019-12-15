@@ -1,27 +1,23 @@
 //
-//  Workouts.swift
+//  Exercises.swift
 //  Workout Planner
 //
-//  Created by Egor Deryabin on 24/11/2562 BE.
+//  Created by Egor Deryabin on 15/12/2562 BE.
 //  Copyright © 2562 Egor Deryabin. All rights reserved.
 //
 
 import UIKit
 
-class Workouts: UIView {
+class Exercises: UIView {
     let tableView = UITableView()
     private var safeArea: UILayoutGuide!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        setupTableView()
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
-        setupTableView()
     }
     
     func setupTableView() {

@@ -9,13 +9,13 @@
 import UIKit
 
 class MainTableCellController: TableCellController {
-    fileprivate let item: CellItem
+    let item: CellItem
     
     init(item: CellItem) {
         self.item = item
     }
     
-    fileprivate static var cellIdentifier: String {
+    static var cellIdentifier: String {
         return String(describing: type(of: MainTableViewCell.self))
     }
     
