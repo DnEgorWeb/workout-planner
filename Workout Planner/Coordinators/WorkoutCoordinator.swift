@@ -130,9 +130,5 @@ extension WorkoutCoordinator {
         default:
             vc.view = vc.workoutsView
         }
-            
-        
-//        vc.workoutsView.isHidden = selectedIndex != 0
-//        vc.exercisesView.isHidden = selectedIndex != 1
     }
 }

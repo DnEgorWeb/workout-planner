@@ -21,15 +21,15 @@ class MyCellControllerFactory {
         return items.map { item in
             
             if item.isMainCell {
-                return MainTableCellController(item: item)
+                return MainTableCellController()
             } else if item.isSetsCell {
-                return SetsTableCellController(item: item)
+                return SetsTableCellController()
             } else if item.isRepsCell {
-                return RepsTableCellController(item: item)
+                return RepsTableCellController()
             } else if item.isTimeCell {
-                return TimeTableCellController(item: item)
+                return TimeTableCellController()
             } else {
-                return DescriptionTableCellController(item: item)
+                return DescriptionTableCellController()
             }
         }
     }

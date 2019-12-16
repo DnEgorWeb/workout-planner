@@ -8,13 +8,7 @@
 
 import UIKit
 
-class TimeTableCellController: TableCellController {
-    let item: CellItem
-    
-    init(item: CellItem) {
-        self.item = item
-    }
-    
+class TimeTableCellController: TableCellController {    
     static var cellIdentifier: String {
         return String(describing: type(of: TimeTableViewCell.self))
     }

@@ -31,7 +31,8 @@
 		4E6B1DE723882A0C006B9CCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E6B1DE623882A0C006B9CCA /* Assets.xcassets */; };
 		4E6B1DE92388DF34006B9CCA /* GroupTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6B1DE82388DF34006B9CCA /* GroupTypes.swift */; };
 		4E7A83932386CCD200CE9A7F /* ViewConrtoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7A83922386CCD200CE9A7F /* ViewConrtoller.swift */; };
-		4E8D21A723A3AE6400572B83 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8D21A623A3AE6400572B83 /* Exercise.swift */; };
+		4E80FBBA23A7B52E0075AF14 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E80FBB923A7B52E0075AF14 /* Exercise.swift */; };
+		4E8D21A723A3AE6400572B83 /* DetailedExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8D21A623A3AE6400572B83 /* DetailedExercise.swift */; };
 		4E8D21AF23A5393A00572B83 /* TableCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8D21AE23A5393A00572B83 /* TableCellController.swift */; };
 		4E8D21B623A53A6000572B83 /* MainTableCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8D21B523A53A6000572B83 /* MainTableCellController.swift */; };
 		4E8D21B823A53AB500572B83 /* CellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8D21B723A53AB500572B83 /* CellItem.swift */; };
@@ -85,7 +86,8 @@
 		4E6B1DE623882A0C006B9CCA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E6B1DE82388DF34006B9CCA /* GroupTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTypes.swift; sourceTree = "<group>"; };
 		4E7A83922386CCD200CE9A7F /* ViewConrtoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConrtoller.swift; sourceTree = "<group>"; };
-		4E8D21A623A3AE6400572B83 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		4E80FBB923A7B52E0075AF14 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		4E8D21A623A3AE6400572B83 /* DetailedExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedExercise.swift; sourceTree = "<group>"; };
 		4E8D21AE23A5393A00572B83 /* TableCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCellController.swift; sourceTree = "<group>"; };
 		4E8D21B523A53A6000572B83 /* MainTableCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableCellController.swift; sourceTree = "<group>"; };
 		4E8D21B723A53AB500572B83 /* CellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellItem.swift; sourceTree = "<group>"; };
@@ -394,8 +396,9 @@
 		4ED48B3123844C6B00DB7BC3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4E8D21A623A3AE6400572B83 /* Exercise.swift */,
+				4E8D21A623A3AE6400572B83 /* DetailedExercise.swift */,
 				4E6B1DE22387F577006B9CCA /* Group.swift */,
+				4E80FBB923A7B52E0075AF14 /* Exercise.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -556,7 +559,7 @@
 				4E8D21CB23A6263300572B83 /* DescriptionTableViewCell.swift in Sources */,
 				4E8D21BD23A53BA500572B83 /* MainTableViewCell.swift in Sources */,
 				4E1B6B61238570B700CA6F57 /* StopwatchVC.swift in Sources */,
-				4E8D21A723A3AE6400572B83 /* Exercise.swift in Sources */,
+				4E8D21A723A3AE6400572B83 /* DetailedExercise.swift in Sources */,
 				4E6B1DE32387F577006B9CCA /* Group.swift in Sources */,
 				4ED48B1B2384302600DB7BC3 /* AppDelegate.swift in Sources */,
 				4E8D21B623A53A6000572B83 /* MainTableCellController.swift in Sources */,
@@ -565,6 +568,7 @@
 				4E59C38D238A5B4400209DB4 /* WorkoutCoordinator.swift in Sources */,
 				4E3795C0238E3E6000593F19 /* DataSource.swift in Sources */,
 				4E53BBCB238A64560086302C /* ProgressCoordinator.swift in Sources */,
+				4E80FBBA23A7B52E0075AF14 /* Exercise.swift in Sources */,
 				4E8D21D123A62A0B00572B83 /* Exercises.swift in Sources */,
 				4E8D21C723A625F800572B83 /* TimeTableViewCell.swift in Sources */,
 				4EAB6F8B2399306E0065599D /* PickerHandler.swift in Sources */,

@@ -16,6 +16,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
+        let defaults = UserDefaults.standard
+        if defaults.bool(forKey: "isFirstLaunch") == false {
+            StorageManager.setDefaultGroups()
+            
+            defaults.set(true, forKey: "isFirstLaunch")
+        }
+        
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = .white
         window?.rootViewController = MainTabBarController()

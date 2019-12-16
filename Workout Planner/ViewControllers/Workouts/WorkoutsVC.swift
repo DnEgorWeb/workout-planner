@@ -41,6 +41,7 @@ class WorkoutsVC: UIViewController {
     
     func setupExercisesView() {
         cellControllerFactory.registerCells(on: exercisesView.tableView)
+        exercisesDataSource.sections = 3
         exercisesDataSource.cellControllers = [MainTableCellController()]
         exercisesView.tableView.dataSource = exercisesDataSource
         exercisesView.tableView.delegate = exercisesDelegate

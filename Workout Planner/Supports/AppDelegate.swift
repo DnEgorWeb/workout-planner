@@ -16,19 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let defaults = UserDefaults.standard
         if defaults.bool(forKey: "isFirstLaunch") == false {
-            let workoutsData: [Group] = [
-                Group(title: "Monday", subtitle: "Hands and chest", image: #imageLiteral(resourceName: "emptyGroup"), type: .strength),
-                Group(title: "Friday", subtitle: "Legs and ABS", image: #imageLiteral(resourceName: "emptyGroup"), type: .strength),
-                Group(title: "Tabata", subtitle: "Legs", image: #imageLiteral(resourceName: "emptyGroup"), type: .cardio),
-                Group(title: "Group title", subtitle: "Group subtitle", image: #imageLiteral(resourceName: "emptyGroup"), type: .custom),
-            ]
-
-            let realm = try! Realm()
-            try! realm.write {
-                for group in workoutsData {
-                    realm.add(group)
-                }
-            }
+            StorageManager.setDefaultGroups()
             
             defaults.set(true, forKey: "isFirstLaunch")
         }

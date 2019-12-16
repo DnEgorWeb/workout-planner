@@ -10,9 +10,10 @@ import UIKit
 
 class ExercisesDS: NSObject, UITableViewDataSource {
     var cellControllers = [TableCellController]()
+    var sections = 0
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return cellControllers.count
+        return sections
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
