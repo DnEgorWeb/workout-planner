@@ -20,7 +20,7 @@ class Exercise: Object {
     }
     @objc dynamic var reps = 0
     @objc dynamic var sets = 0
-    @objc dynamic var weights: [Float]? = nil
+    var weights: [Float]? = nil
     @objc dynamic var image: Data? = nil
     @objc dynamic var groupName: String? = nil
     @objc dynamic var time = 0

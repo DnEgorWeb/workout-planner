@@ -46,6 +46,8 @@
 		4E8D21CD23A6264000572B83 /* DescriptionCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8D21CC23A6264000572B83 /* DescriptionCellController.swift */; };
 		4E8D21CF23A627FC00572B83 /* CellControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8D21CE23A627FC00572B83 /* CellControllerFactory.swift */; };
 		4E8D21D123A62A0B00572B83 /* Exercises.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8D21D023A62A0B00572B83 /* Exercises.swift */; };
+		4E8D21D323A62B6A00572B83 /* ExercisesDS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8D21D223A62B6A00572B83 /* ExercisesDS.swift */; };
+		4E8D21D523A62B8D00572B83 /* ExercisesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8D21D423A62B8D00572B83 /* ExercisesDelegate.swift */; };
 		4E91B714239F806A00295DEB /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E91B713239F806A00295DEB /* StoreManager.swift */; };
 		4EAB6F8923992D230065599D /* EditingHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAB6F8823992D230065599D /* EditingHandler.swift */; };
 		4EAB6F8B2399306E0065599D /* PickerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAB6F8A2399306E0065599D /* PickerHandler.swift */; };
@@ -98,6 +100,8 @@
 		4E8D21CC23A6264000572B83 /* DescriptionCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionCellController.swift; sourceTree = "<group>"; };
 		4E8D21CE23A627FC00572B83 /* CellControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellControllerFactory.swift; sourceTree = "<group>"; };
 		4E8D21D023A62A0B00572B83 /* Exercises.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercises.swift; sourceTree = "<group>"; };
+		4E8D21D223A62B6A00572B83 /* ExercisesDS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesDS.swift; sourceTree = "<group>"; };
+		4E8D21D423A62B8D00572B83 /* ExercisesDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesDelegate.swift; sourceTree = "<group>"; };
 		4E91B713239F806A00295DEB /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		4EAB6F8823992D230065599D /* EditingHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingHandler.swift; sourceTree = "<group>"; };
 		4EAB6F8A2399306E0065599D /* PickerHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerHandler.swift; sourceTree = "<group>"; };
@@ -200,6 +204,7 @@
 		4E6B1DF3238915EA006B9CCA /* Workouts */ = {
 			isa = PBXGroup;
 			children = (
+				4E1B6B5C23856E2F00CA6F57 /* WorkoutsVC.swift */,
 				4E8D21B223A539BF00572B83 /* UserWorkouts */,
 				4E8D21B023A5398D00572B83 /* Exercises */,
 				4EAB6F8C239935070065599D /* Main */,
@@ -213,6 +218,8 @@
 				4E8D21B423A53A1600572B83 /* CreateExercise */,
 				4E8D21B323A539DF00572B83 /* Cells */,
 				4E8D21B123A539A000572B83 /* Protocols */,
+				4E8D21D223A62B6A00572B83 /* ExercisesDS.swift */,
+				4E8D21D423A62B8D00572B83 /* ExercisesDelegate.swift */,
 			);
 			path = Exercises;
 			sourceTree = "<group>";
@@ -308,7 +315,6 @@
 		4EAB6F8C239935070065599D /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				4E1B6B5C23856E2F00CA6F57 /* WorkoutsVC.swift */,
 				4E53BBD0238A72530086302C /* WorkoutsDS.swift */,
 				4E53BBD2238A77530086302C /* WorkoutsTableViewDelegate.swift */,
 			);
@@ -545,6 +551,7 @@
 				4E53BBDB238A93620086302C /* CreateGroup.swift in Sources */,
 				4E1B6B5F2385704800CA6F57 /* ProgressVC.swift in Sources */,
 				4E91B714239F806A00295DEB /* StoreManager.swift in Sources */,
+				4E8D21D323A62B6A00572B83 /* ExercisesDS.swift in Sources */,
 				4ED48B1F2384302600DB7BC3 /* MainTabBarController.swift in Sources */,
 				4E8D21CB23A6263300572B83 /* DescriptionTableViewCell.swift in Sources */,
 				4E8D21BD23A53BA500572B83 /* MainTableViewCell.swift in Sources */,
@@ -564,6 +571,7 @@
 				4E3E18D3239A537C0048EC96 /* SectionHeaderView.swift in Sources */,
 				4E59C388238A3B6200209DB4 /* Coordinator.swift in Sources */,
 				4E8D21AF23A5393A00572B83 /* TableCellController.swift in Sources */,
+				4E8D21D523A62B8D00572B83 /* ExercisesDelegate.swift in Sources */,
 				4E1B6B5D23856E2F00CA6F57 /* WorkoutsVC.swift in Sources */,
 				4E3795C7238E79C700593F19 /* TextCell.swift in Sources */,
 				4E8D21BF23A6253D00572B83 /* SetsCellController.swift in Sources */,

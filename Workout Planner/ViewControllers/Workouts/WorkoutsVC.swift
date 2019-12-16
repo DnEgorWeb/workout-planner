@@ -12,24 +12,38 @@ import RealmSwift
 class WorkoutsVC: UIViewController {
     weak var coordinator: WorkoutCoordinator?
     let workoutsView = Workouts()
+    let exercisesView = Exercises()
     private var dataSource = WorkoutsDS()
     private var tableDelegate = WorkoutsTableViewDelegate()
+    private let exercisesDataSource = ExercisesDS()
+    private let exercisesDelegate = ExercisesTableViewDelegate()
     private let cellIdentifier = CellIdentifiers.workouts.rawValue
+    private let cellControllerFactory = MyCellControllerFactory()
 
     override func loadView() {
         super.loadView()
         
         getData()
+        setupWorkoutsView()
+        setupExercisesView()
         
+        view = workoutsView
+    }
+    
+    func setupWorkoutsView() {
         workoutsView.tableView.register(GroupCell.self, forCellReuseIdentifier: cellIdentifier)
         workoutsView.tableView.dataSource = dataSource
         workoutsView.tableView.delegate = tableDelegate
         workoutsView.tableView.register(SectionHeaderView.self, forHeaderFooterViewReuseIdentifier: SectionHeaderView.reuseIdentifier)
         workoutsView.tableView.allowsSelectionDuringEditing = true
-        
         tableDelegate.delegate = self
-        
-        view = workoutsView
+    }
+    
+    func setupExercisesView() {
+        cellControllerFactory.registerCells(on: exercisesView.tableView)
+        exercisesDataSource.cellControllers = [MainTableCellController()]
+        exercisesView.tableView.dataSource = exercisesDataSource
+        exercisesView.tableView.delegate = exercisesDelegate
     }
     
     func getData() {

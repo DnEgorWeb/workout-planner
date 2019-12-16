@@ -123,6 +123,16 @@ extension WorkoutCoordinator {
         presentationController?.navigationItem.rightBarButtonItem?.isEnabled = selectedIndex != 2
         
         guard let vc = presentationController as? WorkoutsVC else { return }
-        vc.workoutsView.isHidden = selectedIndex != 0
+        
+        switch selectedIndex {
+        case 1:
+            vc.view = vc.exercisesView
+        default:
+            vc.view = vc.workoutsView
+        }
+            
+        
+//        vc.workoutsView.isHidden = selectedIndex != 0
+//        vc.exercisesView.isHidden = selectedIndex != 1
     }
 }
