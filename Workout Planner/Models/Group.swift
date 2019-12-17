@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 
 class Group: Object {
-    @objc dynamic var id: UUID = UUID()
+    var id: UUID = UUID()
     @objc dynamic var title: String = ""
     @objc dynamic var subtitle: String?
     @objc dynamic var image: Data?
