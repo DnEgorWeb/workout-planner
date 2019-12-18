@@ -49,4 +49,32 @@ class StorageManager {
             }
         }
     }
+    
+    static func setDefaultExercises() {
+        let exercises: [Exercise] = [
+            Exercise(name: "Bench press", type: .strength, image: #imageLiteral(resourceName: "strength-1")),
+            Exercise(name: "Incline bench press", type: .strength, image: #imageLiteral(resourceName: "strength-1")),
+            Exercise(name: "Pullup", type: .strength, image: #imageLiteral(resourceName: "strength-7")),
+            Exercise(name: "Dip", type: .strength, image: #imageLiteral(resourceName: "strength-14")),
+            Exercise(name: "ABS", type: .strength, image: #imageLiteral(resourceName: "strength-22")),
+            
+            Exercise(name: "Run", type: .strength, image: #imageLiteral(resourceName: "cardio-0")),
+            Exercise(name: "Jump rope", type: .strength, image: #imageLiteral(resourceName: "cardio-1")),
+            Exercise(name: "Cycling", type: .strength, image: #imageLiteral(resourceName: "cardio-12")),
+            Exercise(name: "Boxing", type: .strength, image: #imageLiteral(resourceName: "cardio-3")),
+            
+            Exercise(name: "Standing Hamstring", type: .strength, image: #imageLiteral(resourceName: "yoga-68")),
+            Exercise(name: "Butterfly", type: .strength, image: #imageLiteral(resourceName: "yoga-10")),
+            Exercise(name: "Lying Quad", type: .strength, image: #imageLiteral(resourceName: "yoga-40")),
+            Exercise(name: "Puppy Pose", type: .strength, image: #imageLiteral(resourceName: "yoga-50")),
+            Exercise(name: "Puppy Pose", type: .strength, image: #imageLiteral(resourceName: "yoga-31")),
+        ]
+        
+        let realm = try! Realm()
+        try! realm.write {
+            for exercise in exercises {
+                realm.add(exercise)
+            }
+        }
+    }
 }

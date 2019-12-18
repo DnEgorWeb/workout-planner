@@ -9,18 +9,24 @@
 import UIKit
 
 class ExercisesDS: NSObject, UITableViewDataSource {
-    var cellControllers = [TableCellController]()
-    var sections = 0
+    var exercises: [GroupTypes: [Exercise]] = [.strength: [], .cardio: [], .stretch: [], .custom: []]
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return sections
+        
+        return 4
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        let sectionType = GroupTypes.allCases[section]
+        guard let sectionData = exercises[sectionType] else { return 0 }
+        return sectionData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return cellControllers[indexPath.row].cellFromTableView(tableView, forIndexPath: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "myCell") else {
+            return UITableViewCell()
+        }
+        
+        return cell
     }
 }

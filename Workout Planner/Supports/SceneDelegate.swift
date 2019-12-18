@@ -19,6 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let defaults = UserDefaults.standard
         if defaults.bool(forKey: "isFirstLaunch") == false {
             StorageManager.setDefaultGroups()
+            StorageManager.setDefaultExercises()
             
             defaults.set(true, forKey: "isFirstLaunch")
         }

@@ -40,18 +40,21 @@ class WorkoutsVC: UIViewController {
     }
     
     func setupExercisesView() {
-        cellControllerFactory.registerCells(on: exercisesView.tableView)
-        exercisesDataSource.sections = 3
-        exercisesDataSource.cellControllers = [MainTableCellController()]
         exercisesView.tableView.dataSource = exercisesDataSource
         exercisesView.tableView.delegate = exercisesDelegate
     }
     
     func getData() {
         let realm = try! Realm()
+        
         let groups = realm.objects(Group.self)
         for group in groups {
             dataSource.workoutsData[group.type]?.append(group)
+        }
+        
+        let exercises = realm.objects(Exercise.self)
+        for exercise in exercises {
+            exercisesDataSource.exercises[exercise.type]?.append(exercise)
         }
     }
     
