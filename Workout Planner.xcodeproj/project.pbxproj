@@ -52,6 +52,7 @@
 		4E91B714239F806A00295DEB /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E91B713239F806A00295DEB /* StoreManager.swift */; };
 		4EAB6F8923992D230065599D /* EditingHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAB6F8823992D230065599D /* EditingHandler.swift */; };
 		4EAB6F8B2399306E0065599D /* PickerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAB6F8A2399306E0065599D /* PickerHandler.swift */; };
+		4ECA63E923AB8C740039FA3A /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECA63E823AB8C740039FA3A /* ExerciseCell.swift */; };
 		4ED48B1B2384302600DB7BC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED48B1A2384302600DB7BC3 /* AppDelegate.swift */; };
 		4ED48B1D2384302600DB7BC3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED48B1C2384302600DB7BC3 /* SceneDelegate.swift */; };
 		4ED48B1F2384302600DB7BC3 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED48B1E2384302600DB7BC3 /* MainTabBarController.swift */; };
@@ -107,6 +108,7 @@
 		4E91B713239F806A00295DEB /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		4EAB6F8823992D230065599D /* EditingHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingHandler.swift; sourceTree = "<group>"; };
 		4EAB6F8A2399306E0065599D /* PickerHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerHandler.swift; sourceTree = "<group>"; };
+		4ECA63E823AB8C740039FA3A /* ExerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
 		4ED48B172384302600DB7BC3 /* Workout Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Workout Planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ED48B1A2384302600DB7BC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4ED48B1C2384302600DB7BC3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				4E8D21C823A6261000572B83 /* TimeCellController.swift */,
 				4E8D21CC23A6264000572B83 /* DescriptionCellController.swift */,
 				4E8D21CE23A627FC00572B83 /* CellControllerFactory.swift */,
+				4ECA63E823AB8C740039FA3A /* ExerciseCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -551,6 +554,7 @@
 				4E8D21CF23A627FC00572B83 /* CellControllerFactory.swift in Sources */,
 				4E8D21C323A6259600572B83 /* RepsTableViewCell.swift in Sources */,
 				4E8D21B823A53AB500572B83 /* CellItem.swift in Sources */,
+				4ECA63E923AB8C740039FA3A /* ExerciseCell.swift in Sources */,
 				4E53BBDB238A93620086302C /* CreateGroup.swift in Sources */,
 				4E1B6B5F2385704800CA6F57 /* ProgressVC.swift in Sources */,
 				4E91B714239F806A00295DEB /* StoreManager.swift in Sources */,

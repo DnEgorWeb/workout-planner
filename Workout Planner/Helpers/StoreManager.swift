@@ -58,16 +58,16 @@ class StorageManager {
             Exercise(name: "Dip", type: .strength, image: #imageLiteral(resourceName: "strength-14")),
             Exercise(name: "ABS", type: .strength, image: #imageLiteral(resourceName: "strength-22")),
             
-            Exercise(name: "Run", type: .strength, image: #imageLiteral(resourceName: "cardio-0")),
-            Exercise(name: "Jump rope", type: .strength, image: #imageLiteral(resourceName: "cardio-1")),
-            Exercise(name: "Cycling", type: .strength, image: #imageLiteral(resourceName: "cardio-12")),
-            Exercise(name: "Boxing", type: .strength, image: #imageLiteral(resourceName: "cardio-3")),
+            Exercise(name: "Run", type: .cardio, image: #imageLiteral(resourceName: "cardio-0")),
+            Exercise(name: "Jump rope", type: .cardio, image: #imageLiteral(resourceName: "cardio-1")),
+            Exercise(name: "Cycling", type: .cardio, image: #imageLiteral(resourceName: "cardio-12")),
+            Exercise(name: "Boxing", type: .cardio, image: #imageLiteral(resourceName: "cardio-3")),
             
-            Exercise(name: "Standing Hamstring", type: .strength, image: #imageLiteral(resourceName: "yoga-68")),
-            Exercise(name: "Butterfly", type: .strength, image: #imageLiteral(resourceName: "yoga-10")),
-            Exercise(name: "Lying Quad", type: .strength, image: #imageLiteral(resourceName: "yoga-40")),
-            Exercise(name: "Puppy Pose", type: .strength, image: #imageLiteral(resourceName: "yoga-50")),
-            Exercise(name: "Puppy Pose", type: .strength, image: #imageLiteral(resourceName: "yoga-31")),
+            Exercise(name: "Standing Hamstring", type: .stretch, image: #imageLiteral(resourceName: "yoga-68")),
+            Exercise(name: "Butterfly", type: .stretch, image: #imageLiteral(resourceName: "yoga-10")),
+            Exercise(name: "Lying Quad", type: .stretch, image: #imageLiteral(resourceName: "yoga-40")),
+            Exercise(name: "Puppy Pose", type: .stretch, image: #imageLiteral(resourceName: "yoga-50")),
+            Exercise(name: "Puppy Pose", type: .stretch, image: #imageLiteral(resourceName: "yoga-31")),
         ]
         
         let realm = try! Realm()

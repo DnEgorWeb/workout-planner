@@ -14,4 +14,5 @@ enum CellIdentifiers: String {
     case createGroupTitle = "createGroupTitle"
     case createGroupSubtitle = "createGroupSubtitle"
     case createGroupType = "createGroupType"
+    case exerciseCell = "exerciseCell"
 }

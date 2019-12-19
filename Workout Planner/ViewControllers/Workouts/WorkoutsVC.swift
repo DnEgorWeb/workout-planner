@@ -40,6 +40,7 @@ class WorkoutsVC: UIViewController {
     }
     
     func setupExercisesView() {
+        exercisesView.tableView.register(ExerciseCell.self, forCellReuseIdentifier: CellIdentifiers.exerciseCell.rawValue)
         exercisesView.tableView.dataSource = exercisesDataSource
         exercisesView.tableView.delegate = exercisesDelegate
     }
