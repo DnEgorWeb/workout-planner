@@ -58,6 +58,8 @@
 		4ED48B1F2384302600DB7BC3 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED48B1E2384302600DB7BC3 /* MainTabBarController.swift */; };
 		4ED48B272384303100DB7BC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ED48B252384303100DB7BC3 /* LaunchScreen.storyboard */; };
 		4ED48B3423844CB000DB7BC3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ED48B3323844CB000DB7BC3 /* Default-568h@2x.png */; };
+		4EE874DB23ACCC8200743C47 /* CreateExerciseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE874DA23ACCC8200743C47 /* CreateExerciseVC.swift */; };
+		4EE874DD23ACD4D800743C47 /* CreateExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE874DC23ACD4D800743C47 /* CreateExercise.swift */; };
 		E3FC42EF9F7342FD0BD104C1 /* Pods_Workout_Planner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 904BCDC5E281A0913299D6F2 /* Pods_Workout_Planner.framework */; };
 /* End PBXBuildFile section */
 
@@ -116,6 +118,8 @@
 		4ED48B262384303100DB7BC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4ED48B282384303100DB7BC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4ED48B3323844CB000DB7BC3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		4EE874DA23ACCC8200743C47 /* CreateExerciseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateExerciseVC.swift; sourceTree = "<group>"; };
+		4EE874DC23ACD4D800743C47 /* CreateExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateExercise.swift; sourceTree = "<group>"; };
 		904BCDC5E281A0913299D6F2 /* Pods_Workout_Planner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Workout_Planner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2A7B3658B6880D4EE1A5E4A /* Pods-Workout Planner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Workout Planner.debug.xcconfig"; path = "Target Support Files/Pods-Workout Planner/Pods-Workout Planner.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -179,7 +183,6 @@
 			isa = PBXGroup;
 			children = (
 				4E3E18D6239A76A50048EC96 /* Workouts */,
-				4E53BBDA238A93620086302C /* CreateGroup.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -219,11 +222,8 @@
 		4E8D21B023A5398D00572B83 /* Exercises */ = {
 			isa = PBXGroup;
 			children = (
+				4EE874D423ACCAF700743C47 /* Main */,
 				4E8D21B423A53A1600572B83 /* CreateExercise */,
-				4E8D21B323A539DF00572B83 /* Cells */,
-				4E8D21B123A539A000572B83 /* Protocols */,
-				4E8D21D223A62B6A00572B83 /* ExercisesDS.swift */,
-				4E8D21D423A62B8D00572B83 /* ExercisesDelegate.swift */,
 			);
 			path = Exercises;
 			sourceTree = "<group>";
@@ -250,12 +250,6 @@
 		4E8D21B323A539DF00572B83 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				4E8D21B523A53A6000572B83 /* MainTableCellController.swift */,
-				4E8D21BE23A6253D00572B83 /* SetsCellController.swift */,
-				4E8D21C423A625DC00572B83 /* RepsCellController.swift */,
-				4E8D21C823A6261000572B83 /* TimeCellController.swift */,
-				4E8D21CC23A6264000572B83 /* DescriptionCellController.swift */,
-				4E8D21CE23A627FC00572B83 /* CellControllerFactory.swift */,
 				4ECA63E823AB8C740039FA3A /* ExerciseCell.swift */,
 			);
 			path = Cells;
@@ -264,6 +258,8 @@
 		4E8D21B423A53A1600572B83 /* CreateExercise */ = {
 			isa = PBXGroup;
 			children = (
+				4EE874D523ACCB0900743C47 /* Cells */,
+				4EE874DA23ACCC8200743C47 /* CreateExerciseVC.swift */,
 			);
 			path = CreateExercise;
 			sourceTree = "<group>";
@@ -271,6 +267,7 @@
 		4E8D21B923A53B6900572B83 /* UserWorkouts */ = {
 			isa = PBXGroup;
 			children = (
+				4E53BBDA238A93620086302C /* CreateGroup.swift */,
 				4E53BBD5238A79680086302C /* Workouts.swift */,
 				4E3E18D2239A537C0048EC96 /* SectionHeaderView.swift */,
 			);
@@ -282,6 +279,7 @@
 			children = (
 				4E8D21BB23A53B8000572B83 /* Cells */,
 				4E8D21D023A62A0B00572B83 /* Exercises.swift */,
+				4EE874DC23ACD4D800743C47 /* CreateExercise.swift */,
 			);
 			path = Exercises;
 			sourceTree = "<group>";
@@ -415,6 +413,31 @@
 				4ED48B282384303100DB7BC3 /* Info.plist */,
 			);
 			path = Supports;
+			sourceTree = "<group>";
+		};
+		4EE874D423ACCAF700743C47 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4E8D21B323A539DF00572B83 /* Cells */,
+				4E8D21B123A539A000572B83 /* Protocols */,
+				4E8D21D223A62B6A00572B83 /* ExercisesDS.swift */,
+				4E8D21D423A62B8D00572B83 /* ExercisesDelegate.swift */,
+			);
+			name = Main;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		4EE874D523ACCB0900743C47 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4E8D21B523A53A6000572B83 /* MainTableCellController.swift */,
+				4E8D21BE23A6253D00572B83 /* SetsCellController.swift */,
+				4E8D21C423A625DC00572B83 /* RepsCellController.swift */,
+				4E8D21C823A6261000572B83 /* TimeCellController.swift */,
+				4E8D21CC23A6264000572B83 /* DescriptionCellController.swift */,
+				4E8D21CE23A627FC00572B83 /* CellControllerFactory.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		6747EE60C0041ED33ACC9893 /* Pods */ = {
@@ -571,6 +594,7 @@
 				4E8D21C923A6261000572B83 /* TimeCellController.swift in Sources */,
 				4E59C38D238A5B4400209DB4 /* WorkoutCoordinator.swift in Sources */,
 				4E3795C0238E3E6000593F19 /* DataSource.swift in Sources */,
+				4EE874DB23ACCC8200743C47 /* CreateExerciseVC.swift in Sources */,
 				4E53BBCB238A64560086302C /* ProgressCoordinator.swift in Sources */,
 				4E80FBBA23A7B52E0075AF14 /* Exercise.swift in Sources */,
 				4E8D21D123A62A0B00572B83 /* Exercises.swift in Sources */,
@@ -581,6 +605,7 @@
 				4E8D21AF23A5393A00572B83 /* TableCellController.swift in Sources */,
 				4E8D21D523A62B8D00572B83 /* ExercisesDelegate.swift in Sources */,
 				4E1B6B5D23856E2F00CA6F57 /* WorkoutsVC.swift in Sources */,
+				4EE874DD23ACD4D800743C47 /* CreateExercise.swift in Sources */,
 				4E3795C7238E79C700593F19 /* TextCell.swift in Sources */,
 				4E8D21BF23A6253D00572B83 /* SetsCellController.swift in Sources */,
 				4EAB6F8923992D230065599D /* EditingHandler.swift in Sources */,

@@ -45,7 +45,7 @@ class ExerciseCell: UITableViewCell {
         addSubview(cellImageView)
         cellImageView.translatesAutoresizingMaskIntoConstraints = false
         cellImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        cellImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10).isActive = true
+        cellImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15).isActive = true
         cellImageView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         cellImageView.widthAnchor.constraint(equalToConstant: 50).isActive = true
     }

@@ -12,6 +12,7 @@ class WorkoutCoordinator: Coordinator {
     weak var presentationController: UIViewController?
     var navigationController: UINavigationController
     weak var createGroupController: CreateGroupVC?
+    weak var createExerciseController: CreateExerciseVC?
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -59,8 +60,25 @@ class WorkoutCoordinator: Coordinator {
         navigationController.present(navController, animated: true)
     }
     
+    func createNewExercise(type: GroupTypes) {
+        let vc = CreateExerciseVC()
+        
+        vc.coordinator = self
+        vc.type = type
+        vc.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveNewExercise))
+        vc.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(dismissController))
+        
+        let navController = UINavigationController(rootViewController: vc)
+        
+        navigationController.present(navController, animated: true)
+    }
+    
     @objc func dismissController() {
         navigationController.topViewController?.dismiss(animated: true)
+    }
+    
+    @objc func saveNewExercise() {
+        
     }
     
     @objc func saveNewGroup() {
@@ -109,13 +127,33 @@ extension WorkoutCoordinator {
     }
     
     func setupNewGroupButton() {
-        let newWorkoutButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(newGroupTapped))
+        let newWorkoutButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createButtonTapped))
         newWorkoutButton.tintColor = .orange
         presentationController?.navigationItem.rightBarButtonItem = newWorkoutButton
     }
     
-    @objc func newGroupTapped() {
-        createNewGroup(mode: .create, groupData: nil, indexPath: nil)
+    @objc func createButtonTapped() {
+        guard let vc = presentationController as? WorkoutsVC else { return }
+        guard let segmentedControl = vc.navigationItem.titleView as? UISegmentedControl else { return }
+        
+        let selectedSection = segmentedControl.selectedSegmentIndex
+        
+        if selectedSection == 0 {
+            createNewGroup(mode: .create, groupData: nil, indexPath: nil)
+        }
+        
+        if selectedSection == 1 {
+            let ac = UIAlertController(title: "New exercise", message: "Please, select a type of new exercise", preferredStyle: .actionSheet)
+            
+            for type in GroupTypes.allCases {
+                ac.addAction(UIAlertAction(title: type.rawValue, style: .default, handler: { (_) in
+                    self.createNewExercise(type: type)
+                }))
+            }
+            ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+            
+            navigationController.present(ac, animated: true)
+        }
     }
     
     @objc func segmentedControlTapped(sender: UISegmentedControl) {
