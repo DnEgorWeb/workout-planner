@@ -10,11 +10,17 @@ import UIKit
 
 class CreateExerciseVC: UIViewController {
     weak var coordinator: WorkoutCoordinator!
+    var createExerciseView: CreateExercise!
     var type: GroupTypes!
+    private var dataSource = CreateExerciseDS()
+    private var delegate = CreateExerciseDelegate()
     
     override func loadView() {
-        view = CreateExercise(frame: .zero, type: type)
-        
+        createExerciseView = CreateExercise(frame: .zero, type: type)
+        view = createExerciseView
         navigationItem.title = "Create exercise"
+        
+        createExerciseView.tableView.dataSource = dataSource
+        createExerciseView.tableView.delegate = delegate
     }
 }

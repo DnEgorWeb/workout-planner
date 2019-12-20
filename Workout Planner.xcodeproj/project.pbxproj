@@ -60,6 +60,8 @@
 		4ED48B3423844CB000DB7BC3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ED48B3323844CB000DB7BC3 /* Default-568h@2x.png */; };
 		4EE874DB23ACCC8200743C47 /* CreateExerciseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE874DA23ACCC8200743C47 /* CreateExerciseVC.swift */; };
 		4EE874DD23ACD4D800743C47 /* CreateExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE874DC23ACD4D800743C47 /* CreateExercise.swift */; };
+		4EE874E223ACE47200743C47 /* CreateExerciseDS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE874E123ACE47200743C47 /* CreateExerciseDS.swift */; };
+		4EF2D64323ACE87E00468893 /* CreateExerciseDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF2D64223ACE87E00468893 /* CreateExerciseDelegate.swift */; };
 		E3FC42EF9F7342FD0BD104C1 /* Pods_Workout_Planner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 904BCDC5E281A0913299D6F2 /* Pods_Workout_Planner.framework */; };
 /* End PBXBuildFile section */
 
@@ -120,6 +122,8 @@
 		4ED48B3323844CB000DB7BC3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		4EE874DA23ACCC8200743C47 /* CreateExerciseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateExerciseVC.swift; sourceTree = "<group>"; };
 		4EE874DC23ACD4D800743C47 /* CreateExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateExercise.swift; sourceTree = "<group>"; };
+		4EE874E123ACE47200743C47 /* CreateExerciseDS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateExerciseDS.swift; sourceTree = "<group>"; };
+		4EF2D64223ACE87E00468893 /* CreateExerciseDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateExerciseDelegate.swift; sourceTree = "<group>"; };
 		904BCDC5E281A0913299D6F2 /* Pods_Workout_Planner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Workout_Planner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2A7B3658B6880D4EE1A5E4A /* Pods-Workout Planner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Workout Planner.debug.xcconfig"; path = "Target Support Files/Pods-Workout Planner/Pods-Workout Planner.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -260,6 +264,8 @@
 			children = (
 				4EE874D523ACCB0900743C47 /* Cells */,
 				4EE874DA23ACCC8200743C47 /* CreateExerciseVC.swift */,
+				4EE874E123ACE47200743C47 /* CreateExerciseDS.swift */,
+				4EF2D64223ACE87E00468893 /* CreateExerciseDelegate.swift */,
 			);
 			path = CreateExercise;
 			sourceTree = "<group>";
@@ -574,6 +580,7 @@
 			files = (
 				4E8D21CD23A6264000572B83 /* DescriptionCellController.swift in Sources */,
 				4E6B1DE52387F97E006B9CCA /* GroupCell.swift in Sources */,
+				4EF2D64323ACE87E00468893 /* CreateExerciseDelegate.swift in Sources */,
 				4E8D21CF23A627FC00572B83 /* CellControllerFactory.swift in Sources */,
 				4E8D21C323A6259600572B83 /* RepsTableViewCell.swift in Sources */,
 				4E8D21B823A53AB500572B83 /* CellItem.swift in Sources */,
@@ -590,6 +597,7 @@
 				4E6B1DE32387F577006B9CCA /* Group.swift in Sources */,
 				4ED48B1B2384302600DB7BC3 /* AppDelegate.swift in Sources */,
 				4E8D21B623A53A6000572B83 /* MainTableCellController.swift in Sources */,
+				4EE874E223ACE47200743C47 /* CreateExerciseDS.swift in Sources */,
 				4E8D21C123A6256300572B83 /* SetsTableViewCell.swift in Sources */,
 				4E8D21C923A6261000572B83 /* TimeCellController.swift in Sources */,
 				4E59C38D238A5B4400209DB4 /* WorkoutCoordinator.swift in Sources */,
