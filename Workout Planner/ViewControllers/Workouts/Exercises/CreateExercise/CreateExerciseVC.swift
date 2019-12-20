@@ -12,6 +12,9 @@ class CreateExerciseVC: UIViewController {
     weak var coordinator: WorkoutCoordinator!
     var createExerciseView: CreateExercise!
     var type: GroupTypes!
+//    var cellControllers: [TableCellController]!
+    let cellControllerFactory = CellControllerFactory()
+    
     private var dataSource = CreateExerciseDS()
     private var delegate = CreateExerciseDelegate()
     
@@ -22,5 +25,7 @@ class CreateExerciseVC: UIViewController {
         
         createExerciseView.tableView.dataSource = dataSource
         createExerciseView.tableView.delegate = delegate
+        
+        cellControllerFactory.registerCells(on: createExerciseView.tableView)
     }
 }

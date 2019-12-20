@@ -35,7 +35,6 @@
 		4E8D21A723A3AE6400572B83 /* DetailedExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8D21A623A3AE6400572B83 /* DetailedExercise.swift */; };
 		4E8D21AF23A5393A00572B83 /* TableCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8D21AE23A5393A00572B83 /* TableCellController.swift */; };
 		4E8D21B623A53A6000572B83 /* MainTableCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8D21B523A53A6000572B83 /* MainTableCellController.swift */; };
-		4E8D21B823A53AB500572B83 /* CellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8D21B723A53AB500572B83 /* CellItem.swift */; };
 		4E8D21BD23A53BA500572B83 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8D21BC23A53BA500572B83 /* MainTableViewCell.swift */; };
 		4E8D21BF23A6253D00572B83 /* SetsCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8D21BE23A6253D00572B83 /* SetsCellController.swift */; };
 		4E8D21C123A6256300572B83 /* SetsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8D21C023A6256300572B83 /* SetsTableViewCell.swift */; };
@@ -95,7 +94,6 @@
 		4E8D21A623A3AE6400572B83 /* DetailedExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedExercise.swift; sourceTree = "<group>"; };
 		4E8D21AE23A5393A00572B83 /* TableCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCellController.swift; sourceTree = "<group>"; };
 		4E8D21B523A53A6000572B83 /* MainTableCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableCellController.swift; sourceTree = "<group>"; };
-		4E8D21B723A53AB500572B83 /* CellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellItem.swift; sourceTree = "<group>"; };
 		4E8D21BC23A53BA500572B83 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		4E8D21BE23A6253D00572B83 /* SetsCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetsCellController.swift; sourceTree = "<group>"; };
 		4E8D21C023A6256300572B83 /* SetsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetsTableViewCell.swift; sourceTree = "<group>"; };
@@ -232,15 +230,6 @@
 			path = Exercises;
 			sourceTree = "<group>";
 		};
-		4E8D21B123A539A000572B83 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				4E8D21AE23A5393A00572B83 /* TableCellController.swift */,
-				4E8D21B723A53AB500572B83 /* CellItem.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
 		4E8D21B223A539BF00572B83 /* UserWorkouts */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +251,7 @@
 		4E8D21B423A53A1600572B83 /* CreateExercise */ = {
 			isa = PBXGroup;
 			children = (
+				4EF2D64423AD03CA00468893 /* Protocols */,
 				4EE874D523ACCB0900743C47 /* Cells */,
 				4EE874DA23ACCC8200743C47 /* CreateExerciseVC.swift */,
 				4EE874E123ACE47200743C47 /* CreateExerciseDS.swift */,
@@ -425,7 +415,6 @@
 			isa = PBXGroup;
 			children = (
 				4E8D21B323A539DF00572B83 /* Cells */,
-				4E8D21B123A539A000572B83 /* Protocols */,
 				4E8D21D223A62B6A00572B83 /* ExercisesDS.swift */,
 				4E8D21D423A62B8D00572B83 /* ExercisesDelegate.swift */,
 			);
@@ -444,6 +433,14 @@
 				4E8D21CE23A627FC00572B83 /* CellControllerFactory.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		4EF2D64423AD03CA00468893 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				4E8D21AE23A5393A00572B83 /* TableCellController.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		6747EE60C0041ED33ACC9893 /* Pods */ = {
@@ -583,7 +580,6 @@
 				4EF2D64323ACE87E00468893 /* CreateExerciseDelegate.swift in Sources */,
 				4E8D21CF23A627FC00572B83 /* CellControllerFactory.swift in Sources */,
 				4E8D21C323A6259600572B83 /* RepsTableViewCell.swift in Sources */,
-				4E8D21B823A53AB500572B83 /* CellItem.swift in Sources */,
 				4ECA63E923AB8C740039FA3A /* ExerciseCell.swift in Sources */,
 				4E53BBDB238A93620086302C /* CreateGroup.swift in Sources */,
 				4E1B6B5F2385704800CA6F57 /* ProgressVC.swift in Sources */,

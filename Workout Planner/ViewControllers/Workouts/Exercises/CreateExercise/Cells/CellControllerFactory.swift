@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyCellControllerFactory {
+class CellControllerFactory {
     func registerCells(on tableView: UITableView) {
         MainTableCellController.registerCell(on: tableView)
         SetsTableCellController.registerCell(on: tableView)
@@ -17,21 +17,16 @@ class MyCellControllerFactory {
         DescriptionTableCellController.registerCell(on: tableView)
     }
     
-    func cellControllers(with items: [CellItem]) -> [TableCellController] {
-        return items.map { item in
-            
-            if item.isMainCell {
-                return MainTableCellController()
-            } else if item.isSetsCell {
-                return SetsTableCellController()
-            } else if item.isRepsCell {
-                return RepsTableCellController()
-            } else if item.isTimeCell {
-                return TimeTableCellController()
-            } else {
-                return DescriptionTableCellController()
-            }
+    func cellControllers(with group: GroupTypes) -> [TableCellController] {
+        switch group {
+        case .strength:
+            return [MainTableCellController(), SetsTableCellController(), RepsTableCellController()]
+        case .cardio:
+            return [MainTableCellController(), SetsTableCellController(), TimeTableCellController()]
+        case .stretch:
+            return [MainTableCellController(), TimeTableCellController(), DescriptionTableCellController()]
+        case .custom:
+            return [MainTableCellController(), DescriptionTableCellController()]
         }
     }
-    
 }

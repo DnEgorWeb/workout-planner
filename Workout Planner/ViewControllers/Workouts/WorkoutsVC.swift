@@ -18,7 +18,7 @@ class WorkoutsVC: UIViewController {
     private let exercisesDataSource = ExercisesDS()
     private let exercisesDelegate = ExercisesTableViewDelegate()
     private let cellIdentifier = CellIdentifiers.workouts.rawValue
-    private let cellControllerFactory = MyCellControllerFactory()
+    private let cellControllerFactory = CellControllerFactory()
 
     override func loadView() {
         super.loadView()

@@ -10,6 +10,7 @@ import UIKit
 
 class CreateExerciseDS: NSObject, UITableViewDataSource {
     var type: GroupTypes!
+    var cellControllers: [TableCellController]!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
