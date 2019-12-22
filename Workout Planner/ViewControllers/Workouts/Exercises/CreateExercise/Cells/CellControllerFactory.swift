@@ -20,9 +20,9 @@ class CellControllerFactory {
     func cellControllers(with group: GroupTypes) -> [TableCellController] {
         switch group {
         case .strength:
-            return [MainTableCellController(), SetsTableCellController(), RepsTableCellController()]
+            return [MainTableCellController(), SetsTableCellController(), RepsTableCellController(), DescriptionTableCellController()]
         case .cardio:
-            return [MainTableCellController(), SetsTableCellController(), TimeTableCellController()]
+            return [MainTableCellController(), SetsTableCellController(), TimeTableCellController(), DescriptionTableCellController()]
         case .stretch:
             return [MainTableCellController(), TimeTableCellController(), DescriptionTableCellController()]
         case .custom:

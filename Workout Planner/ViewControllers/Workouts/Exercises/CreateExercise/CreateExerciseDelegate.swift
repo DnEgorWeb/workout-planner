@@ -9,5 +9,7 @@
 import UIKit
 
 class CreateExerciseDelegate: NSObject, UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }

@@ -13,12 +13,11 @@ class CreateExerciseDS: NSObject, UITableViewDataSource {
     var cellControllers: [TableCellController]!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return cellControllers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        return cell
+        return cellControllers[indexPath.row].cellFromTableView(tableView, forIndexPath: indexPath)
     }
     
 }
