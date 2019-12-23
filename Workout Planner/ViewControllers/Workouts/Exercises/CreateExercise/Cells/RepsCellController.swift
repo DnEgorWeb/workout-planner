@@ -20,7 +20,7 @@ class RepsTableCellController: TableCellController {
     func cellFromTableView(_ tableView: UITableView, forIndexPath indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: type(of: self).cellIdentifier, for: indexPath) as! RepsTableViewCell
         
-        // Configure main cell...
+        NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveData(_:)), name: .countOfSetsChanged, object: nil)
         
         return cell
     }
@@ -29,5 +29,8 @@ class RepsTableCellController: TableCellController {
         // do something
     }
     
-    
+    @objc func onDidReceiveData(_ notification: Notification) {
+        guard let data = notification.userInfo else { return }
+        
+    }
 }

@@ -56,5 +56,7 @@ class SetsTableViewCell: UITableViewCell {
     
     @objc func stepperChanged() {
         setsLabel.text = "Sets: \(Int(stepper.value))"
+        
+        NotificationCenter.default.post(name: .countOfSetsChanged, object: stepper.value)
     }
 }
