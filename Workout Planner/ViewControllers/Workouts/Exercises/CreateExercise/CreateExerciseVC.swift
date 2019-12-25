@@ -17,7 +17,7 @@ class CreateExerciseVC: UIViewController {
     private var delegate = CreateExerciseDelegate()
     
     override func loadView() {
-        createExerciseView = CreateExercise(frame: .zero, type: type)
+        createExerciseView = CreateExercise(frame: .zero)
         view = createExerciseView
         navigationItem.title = "Create exercise"
         
@@ -35,7 +35,7 @@ class CreateExerciseVC: UIViewController {
         guard let count = notification.object as? Int else { return }
         guard let cell = createExerciseView.tableView.cellForRow(at: IndexPath(row: 2, section: 0)) as? RepsTableViewCell else { return }
         
-        cell.count = count
-        createExerciseView.tableView.reloadRows(at: [IndexPath(row: 2, section: 0)], with: .automatic)
+        cell.addTextField(with: count)
+        createExerciseView.tableView.reloadData()
     }
 }
