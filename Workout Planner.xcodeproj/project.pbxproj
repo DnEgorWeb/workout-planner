@@ -391,7 +391,6 @@
 				4E3795C3238E44DB00593F19 /* CellIdentifiers.swift */,
 				4E91B713239F806A00295DEB /* StoreManager.swift */,
 				4E5FEEB723B0E25D00AD4B80 /* Extensions.swift */,
-				4E83A40923B4603D00F50722 /* Stepper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -399,6 +398,7 @@
 		4ED48B3123844C6B00DB7BC3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4E83A40923B4603D00F50722 /* Stepper.swift */,
 				4E8D21A623A3AE6400572B83 /* DetailedExercise.swift */,
 				4E6B1DE22387F577006B9CCA /* Group.swift */,
 				4E80FBB923A7B52E0075AF14 /* Exercise.swift */,
