@@ -32,10 +32,19 @@ class CreateExerciseVC: UIViewController {
     }
     
     @objc func onDidReceiveData(_ notification: Notification) {
-        guard let count = notification.object as? Int else { return }
+        guard let userInfo = notification.userInfo else { return }
+        guard let stepperData = userInfo["stepperData"] as? Stepper else { return }
         guard let cell = createExerciseView.tableView.cellForRow(at: IndexPath(row: 2, section: 0)) as? RepsTableViewCell else { return }
         
-        cell.addTextField(with: count)
+        let oldValue = stepperData.oldValue
+        let newValue = stepperData.newValue
+        
+        if (newValue > oldValue) {
+            cell.addTextField(with: newValue)
+        } else {
+            cell.removeTextField()
+        }
+        
         createExerciseView.tableView.reloadData()
     }
 }

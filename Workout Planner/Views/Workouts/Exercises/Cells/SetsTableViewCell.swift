@@ -9,6 +9,7 @@
 import UIKit
 
 class SetsTableViewCell: UITableViewCell {
+    var oldValue = 1
     var stepper: UIStepper = {
         let stepper = UIStepper()
         stepper.minimumValue = 1
@@ -57,6 +58,11 @@ class SetsTableViewCell: UITableViewCell {
     @objc func stepperChanged() {
         setsLabel.text = "Sets: \(Int(stepper.value))"
         
-        NotificationCenter.default.post(name: .countOfSetsChanged, object: stepper.value)
+        let stepperModel = Stepper(oldValue: oldValue, newValue: Int(stepper.value))
+        let postData: [String: Stepper] = ["stepperData": stepperModel]
+        
+        NotificationCenter.default.post(name: .countOfSetsChanged, object: self, userInfo: postData)
+        
+        oldValue = Int(stepper.value)
     }
 }

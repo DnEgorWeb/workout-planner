@@ -17,7 +17,7 @@ class RepsTableViewCell: UITableViewCell {
         
         return stack
     }()
-    let values = [String]()
+    var textFields = [UITextField]()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -50,5 +50,13 @@ class RepsTableViewCell: UITableViewCell {
     func addTextField(with count: Int) {
         let textField = createTextField(of: count)
         stack.addArrangedSubview(textField)
+        textFields.append(textField)
+    }
+    
+    func removeTextField() {
+        guard let lastTextField = textFields.last else { return }
+        
+        textFields.removeLast()
+        lastTextField.removeFromSuperview()
     }
 }
