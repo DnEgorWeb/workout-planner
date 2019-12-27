@@ -17,7 +17,7 @@ class RepsTableCellController: TableCellController {
         tableView.register(RepsTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
     }
     
-    func cellFromTableView(_ tableView: UITableView, forIndexPath indexPath: IndexPath) -> UITableViewCell {
+    func cellFromTableView(_ tableView: UITableView, forIndexPath indexPath: IndexPath, sourceController: CreateExerciseVC) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: type(of: self).cellIdentifier, for: indexPath) as! RepsTableViewCell
         
         return cell

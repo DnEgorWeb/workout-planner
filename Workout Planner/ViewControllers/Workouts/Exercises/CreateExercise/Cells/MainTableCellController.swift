@@ -17,10 +17,10 @@ class MainTableCellController: TableCellController {
         tableView.register(MainTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
     }
     
-    func cellFromTableView(_ tableView: UITableView, forIndexPath indexPath: IndexPath) -> UITableViewCell {
+    func cellFromTableView(_ tableView: UITableView, forIndexPath indexPath: IndexPath, sourceController: CreateExerciseVC) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: type(of: self).cellIdentifier, for: indexPath) as! MainTableViewCell
         
-        // Configure main cell...
+        cell.delegate = sourceController
         
         return cell
     }

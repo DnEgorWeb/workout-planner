@@ -9,6 +9,8 @@
 import UIKit
 
 class MainTableViewCell: UITableViewCell {
+    weak var delegate: CreateExerciseVC?
+    
     let exerciseImage: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
@@ -59,6 +61,10 @@ class MainTableViewCell: UITableViewCell {
         exerciseImage.translatesAutoresizingMaskIntoConstraints = false
         addSubview(exerciseImage)
         
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
+        exerciseImage.isUserInteractionEnabled = true
+        exerciseImage.addGestureRecognizer(tapRecognizer)
+        
         exerciseImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 10).isActive = true
         exerciseImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15).isActive = true
         exerciseImage.widthAnchor.constraint(equalToConstant: 80).isActive = true
@@ -92,6 +98,10 @@ class MainTableViewCell: UITableViewCell {
         markLabel.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor).isActive = true
         markLabel.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 10).isActive = true
         markLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10).isActive = true
+    }
+    
+    @objc func imageTapped() {
+        delegate?.chooseImage()
     }
 }
 

@@ -23,6 +23,7 @@ class CreateExerciseVC: UIViewController {
         
         cellControllerFactory.registerCells(on: createExerciseView.tableView)
         dataSource.cellControllers = cellControllerFactory.cellControllers(with: type)
+        dataSource.sourceController = self
         createExerciseView.tableView.dataSource = dataSource
         createExerciseView.tableView.delegate = delegate
         
@@ -46,5 +47,34 @@ class CreateExerciseVC: UIViewController {
         }
         
         createExerciseView.tableView.reloadData()
+    }
+    
+    func chooseImage() {
+        let ac = UIAlertController(title: "Set icon", message: "Choose source for your icon", preferredStyle: .actionSheet)
+        
+        let iconSets = UIAlertAction(title: "Icon sets", style: .default) { (_) in
+            // navigate to icon sets
+        }
+        
+        let picker = UIAlertAction(title: "Gallery", style: .default) { (_) in
+            let imagePicker = UIImagePickerController()
+            imagePicker.allowsEditing = true
+            imagePicker.sourceType = .photoLibrary
+            
+            imagePicker.delegate = self
+            
+            self.present(imagePicker, animated: true)
+        }
+        
+        ac.addAction(iconSets)
+        ac.addAction(picker)
+        
+        self.present(ac, animated: true)
+    }
+}
+
+
+extension CreateExerciseVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
     }
 }

@@ -9,6 +9,6 @@ import UIKit
 
 protocol TableCellController {
     static func registerCell(on tableView: UITableView)
-    func cellFromTableView(_ tableView: UITableView, forIndexPath indexPath: IndexPath) -> UITableViewCell
+    func cellFromTableView(_ tableView: UITableView, forIndexPath indexPath: IndexPath, sourceController: CreateExerciseVC) -> UITableViewCell
     func didSelectCell()
 }
