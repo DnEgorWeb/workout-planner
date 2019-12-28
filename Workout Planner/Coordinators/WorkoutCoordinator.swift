@@ -63,6 +63,7 @@ class WorkoutCoordinator: Coordinator {
     func createNewExercise(type: GroupTypes) {
         let vc = CreateExerciseVC()
         
+        vc.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
         vc.coordinator = self
         vc.type = type
         vc.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveNewExercise))

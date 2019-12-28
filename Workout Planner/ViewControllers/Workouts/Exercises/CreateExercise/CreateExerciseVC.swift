@@ -53,7 +53,10 @@ class CreateExerciseVC: UIViewController {
         let ac = UIAlertController(title: "Set icon", message: "Choose source for your icon", preferredStyle: .actionSheet)
         
         let iconSetsAction = UIAlertAction(title: "Icon sets", style: .default) { (_) in
-            // navigate to icon sets
+            let vc = IconSetsVC()
+            vc.type = self.type
+            let navController = UINavigationController(rootViewController: vc)
+            self.present(navController, animated: true)
         }
         
         let pickerAction = UIAlertAction(title: "Gallery", style: .default) { (_) in
@@ -75,7 +78,6 @@ class CreateExerciseVC: UIViewController {
         self.present(ac, animated: true)
     }
 }
-
 
 extension CreateExerciseVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {

@@ -14,7 +14,7 @@ class MainTableViewCell: UITableViewCell {
     let exerciseImage: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
-        imageView.image = UIImage(named: "strength-4") // different for strength, cardio, stretch and custom
+        imageView.image = UIImage(named: "strength-4")
         
         return imageView
     }()
